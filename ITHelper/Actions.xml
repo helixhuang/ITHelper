@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!--示例-->
+  <!--
+  <ActionGroup Name="组名称">
+    ///设置IE区域
+    ///Domain为域名或者IP
+    ///SiteZone是区域，0为Internet，1为本地站点，2为受信任站点，3为被阻止的站点，默认为1
+    ///Protocol为支持的协议，默认为 * ，既支持任何协议
+    <SecurityZone Domain="oa.antonoil.com" />
+    <SecurityZone Domain="oa.antonoil.com" SiteZone="1" Protocol="http"/>
+    <SecurityZone Domain="192.168.100.254" SiteZone="2" Protocol="https"/>
+    ///添加兼容性视图
+    <CompatibilityView Domain="192.168.100.245" />
+    <CompatibilityView Domain="oa.antonoil.com" />
+    ///允许弹出窗口
+    <PopupBlocker Domain="oa.antonoil.com" />
+    ///安装程序
+    ///Name为名称
+    ///Path为路径，如果不写绝对路径的话，则相对于本程序的路径
+    <Install Name="E-cology控件" Path="OA\Ecologyplugin.exe"/>
+    <Install Name="文件上传控件" Path="OA\fileupload.exe"/>
+    <Install Name="Office 控件" Path="OA\iWebOffice.exe"/>
+    <Install Name="图形化流程控件" Path="OA\chinaexcel.exe"/>
+    <Install Name="报表控件" Path="OA\teechart.exe"/>
+    ///拷贝文件
+    ///OS只有当操作系统符合本条件时才会执行，如果不设置则无论是32位还是64位都会执行
+    <CopyFile OS="x86" From="OA\OA-32.lnk" To="%DesktopDirectory%\OA.lnk"/>
+    <CopyFile OS="x64" From="OA\OA-64.lnk" To="%DesktopDirectory%\OA.lnk"/>
+    ///显示消息
+    <ShowMessage Message="处理完毕\n并在桌面上创建了OA的快捷方式\n点击确定打开OA进行测试"/>
+    ///设置主页
+    <IEHome Url="http://www.antonoil.com" />
+    ///打开浏览器
+    <OpenIE Url="http://oa.antonoil.com" />
+  </ActionGroup>
+  -->
+  <ActionGroup Name="新机器安装默认设置">
+    <CompatibilityView Domain="192.168.100.245" />
+    <CompatibilityView Domain="192.168.100.250" />
+    <CompatibilityView Domain="219.238.8.102" />
+    <CompatibilityView Domain="oa.antonoil.com" />
+    <SecurityZone Domain="192.168.100.245" />
+    <SecurityZone Domain="192.168.100.250" />
+    <SecurityZone Domain="219.238.8.102" />
+    <SecurityZone Domain="oa.antonoil.com" />
+    <PopupBlocker Domain="oa.antonoil.com" />
+    <Install Name="E-cology控件" Path="OA\Ecologyplugin.exe"/>
+    <Install Name="文件上传控件" Path="OA\fileupload.exe"/>
+    <Install Name="Office 控件" Path="OA\iWebOffice.exe"/>
+    <Install Name="图形化流程控件" Path="OA\chinaexcel.exe"/>
+    <Install Name="报表控件" Path="OA\teechart.exe"/>
+    <CopyFile OS="x86" From="OA\OA-32.lnk" To="%DesktopDirectory%\OA.lnk"/>
+    <CopyFile OS="x64" From="OA\OA-64.lnk" To="%DesktopDirectory%\OA.lnk"/>
+    <IEHome Url="http://www.antonoil.com" />
+  </ActionGroup>
+  <ActionGroup Name="解决IE11下的OA问题">
+    <SecurityZone Domain="oa.antonoil.com"/>
+    <SecurityZone Domain="192.168.100.245"/>
+    <Install Name="E-cology控件" Path="OA\Ecologyplugin.exe"/>
+    <Install Name="文件上传控件" Path="OA\fileupload.exe"/>
+    <Install Name="Office 控件" Path="OA\iWebOffice.exe"/>
+    <Install Name="图形化流程控件" Path="OA\chinaexcel.exe"/>
+    <Install Name="报表控件" Path="OA\teechart.exe"/>
+    <CopyFile OS="x86" From="OA\OA-32.lnk" To="%DesktopDirectory%\OA.lnk"/>
+    <CopyFile OS="x64" From="OA\OA-64.lnk" To="%DesktopDirectory%\OA.lnk"/>
+    <ShowMessage Message="处理完毕\n并在桌面上创建了OA的快捷方式\n点击确定打开OA进行测试"/>
+    <OpenIE Url="http://oa.antonoil.com" />
+  </ActionGroup>
+</Actions>
