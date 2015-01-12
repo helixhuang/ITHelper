@@ -67,4 +67,8 @@
     <ShowMessage Message="处理完毕\n并在桌面上创建了OA的快捷方式\n点击确定打开OA进行测试"/>
     <OpenIE Url="http://oa.antonoil.com" />
   </ActionGroup>
+  <ActionGroup Name="安装公司PPT模版">
+    <CopyFile OS="ALL" From="PPT\安东新版-宽屏.thmx" To="%ApplicationData%\Microsoft\Templates\Document Themes\安东新版-宽屏.thmx"/>
+    <CopyFile OS="ALL" From="PPT\安东新版-普通.thmx" To="%ApplicationData%\Microsoft\Templates\Document Themes\安东新版-普通.thmx"/>
+  </ActionGroup>
 </Actions>

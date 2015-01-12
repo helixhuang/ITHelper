@@ -56,6 +56,7 @@ namespace ITHelper
             processBar.Visible = true;
             startActionButton.Enabled = false;
             actionListBox.Enabled = false;
+            eventListBox.Items.Clear();
             ActionGroup actionGroup = actionListBox.SelectedItem as ActionGroup;
             BackgroundWorker bw = new BackgroundWorker();
             bw.DoWork += Action_DoWork;

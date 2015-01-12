@@ -64,7 +64,7 @@ namespace RunasGui
 
         public static void myProcess_Exited(object sender, System.EventArgs e)
         {
-            MessageBox.Show("You exited");
+            //MessageBox.Show("You exited");
         }
     
         [DllImport("advapi32.dll", SetLastError = true)]
