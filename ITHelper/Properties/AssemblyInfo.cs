@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IT助手")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("IT 助手")]
+[assembly: AssemblyDescription("本软件由安东石油信息化技术中心开发")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("安东石油信息化技术中心")]
 [assembly: AssemblyProduct("ITHelper")]

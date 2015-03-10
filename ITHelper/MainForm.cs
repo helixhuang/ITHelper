@@ -104,7 +104,7 @@ namespace ITHelper
                 catch (Exception ex)
                 {
                     bw.ReportProgress(0,
-                        new ActionEventArgs(ActionEventType.Error, string.Format("执行{0}失败", actionNode.Name)));
+                        new ActionEventArgs(ActionEventType.Error, string.Format("执行{0}失败：{1}", actionNode.Name, ex.Message)));
                 }
                 bw.ReportProgress((actionGroup.ActionList.IndexOf(actionNode) + 1) * 100 / actionGroup.ActionList.Count);
             }
