@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -146,6 +147,84 @@ namespace ITHelper
         private void runAsAdminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RunAsHelper.RunAsAdmin();
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
+                UpdateCheckInfo info = null;
+                try
+                {
+                    info = ad.CheckForDetailedUpdate();
+
+                }
+                catch (DeploymentDownloadException dde)
+                {
+                    MessageBox.Show("不能下载新版本的应用。 \n\n请检查你的网络连接，或稍后再试。\n\n Error: " + dde.Message);
+                    return;
+                }
+                catch (InvalidDeploymentException ide)
+                {
+                    MessageBox.Show("不能检查更新，请联系信息化部门解决。\n\n Error: " + ide.Message);
+                    return;
+                }
+                catch (InvalidOperationException ioe)
+                {
+                    MessageBox.Show("本应用不是一个可更新程序，请重新安装。\n\n Error: " + ioe.Message);
+                    return;
+                }
+
+                if (info.UpdateAvailable)
+                {
+                    Boolean doUpdate = true;
+
+                    if (!info.IsUpdateRequired)
+                    {
+                        DialogResult dr = MessageBox.Show("有一个新版本可以使用，现在是否进行更新？", "有更新可用", MessageBoxButtons.OKCancel);
+                        if (!(DialogResult.OK == dr))
+                        {
+                            doUpdate = false;
+                        }
+                    }
+                    else
+                    {
+                        // Display a message that the app MUST reboot. Display the minimum required version.
+                        MessageBox.Show("发现新版本：" + info.MinimumRequiredVersion.ToString() +
+                            "。应用程序将自动更新。",
+                            "应用有更新", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+
+                    if (doUpdate)
+                    {
+                        try
+                        {
+                            ad.Update();
+                            MessageBox.Show("程序已经更新完毕，即将重启应用生效。");
+                            Application.Restart();
+                        }
+                        catch (DeploymentDownloadException dde)
+                        {
+                            MessageBox.Show("不能安装更新。 \n\n请检查你的网络连接，或稍后再试。\n\n Error: " + dde);
+                            return;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("当前程序已是最新版本。");
+                }
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show(this, "当前不是以网络部署运行，请点击确定按钮运行更新！", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    Process.Start("http://www.antontech.cn/publish/ITHelper/ITHelper.application");
+                }
+            }
         }
 
 
