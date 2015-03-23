@@ -18,6 +18,11 @@ namespace ITHelper
             InitializeComponent();
             actionTab.Visible = false;
             processBar.Visible = false;
+            if (RunAsHelper.IsRunAsAdmin())
+            {
+                this.Text += "(管理员模式)";
+                runAsAdminToolStripMenuItem.Visible = false;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -53,11 +58,26 @@ namespace ITHelper
 
         void startActionButton_Click(object sender, EventArgs e)
         {
+            ActionGroup actionGroup = actionListBox.SelectedItem as ActionGroup;
+
+            if (actionGroup.NeedAdmin && !RunAsHelper.IsRunAsAdmin())
+            {
+                DialogResult result = MessageBox.Show("此操作需要管理员权限，是否以管理员权限重新启动应用？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    RunAsHelper.RunAsAdmin();
+                    return;
+                }
+            }
+
             processBar.Visible = true;
             startActionButton.Enabled = false;
             actionListBox.Enabled = false;
             eventListBox.Items.Clear();
-            ActionGroup actionGroup = actionListBox.SelectedItem as ActionGroup;
             BackgroundWorker bw = new BackgroundWorker();
             bw.DoWork += Action_DoWork;
             bw.ProgressChanged += Action_ProgressChanged;
@@ -121,6 +141,11 @@ namespace ITHelper
         void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void runAsAdminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RunAsHelper.RunAsAdmin();
         }
 
 
