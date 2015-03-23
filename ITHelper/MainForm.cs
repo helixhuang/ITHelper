@@ -222,7 +222,7 @@ namespace ITHelper
                 DialogResult result = MessageBox.Show(this, "当前不是以网络部署运行，请点击确定按钮运行更新！", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
-                    Process.Start("http://www.antontech.cn/publish/ITHelper/ITHelper.application");
+                    Process.Start("iexplore.exe","http://www.antontech.cn/publish/ITHelper/ITHelper.application");
                 }
             }
         }
