@@ -50,6 +50,7 @@
     <Compile Include="PopupBlockerAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistryHelper.cs" />
+    <Compile Include="RootCaAction.cs" />
     <Compile Include="SecurityZoneAction.cs" />
     <Compile Include="ShowMessageAction.cs" />
   </ItemGroup>
