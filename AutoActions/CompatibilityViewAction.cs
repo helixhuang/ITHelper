@@ -22,11 +22,10 @@ namespace cn.antontech.ITHelper.AutoActions
         public override void Exec()
         {
             OnNotify(string.Format("将{0}添加到兼容视图", _config.Domain));
-
             AddUserFilter(_config.Domain);
-
             OnNotify(string.Format("成功添加{0}", _config.Domain));
         }
+
 
         private string[] GetDomains()
         {
@@ -35,7 +34,15 @@ namespace cn.antontech.ITHelper.AutoActions
             using (Microsoft.Win32.RegistryKey regkey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(CLEARABLE_LIST_DATA))
             {
                 byte[] filter = regkey.GetValue(USERFILTER) as byte[];
-                domains = GetDomains(filter);
+                if (filter == null)
+                {
+                    domains = new string[] { };
+                }
+                else
+                {
+                    domains = GetDomains(filter);
+                }
+
             }
 
             return domains;
@@ -57,7 +64,11 @@ namespace cn.antontech.ITHelper.AutoActions
             using (Microsoft.Win32.RegistryKey regkey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(CLEARABLE_LIST_DATA))
             {
                 byte[] filter = regkey.GetValue(USERFILTER) as byte[];
-                if (filter == null) filter = new byte[0];
+                if (filter == null) filter = new byte[]{
+                    0x41, 0x1F, 0x00, 0x00, 0x53, 0x08, 0xAD, 0xBA,
+                    0x01, 0x00, 0x00, 0x00, 0x3C, 0x00, 0x00, 0x00,
+                    0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00
+                };
                 byte[] newReg = GetAddedValue(domain, filter);
 
                 regkey.SetValue(USERFILTER, newReg, Microsoft.Win32.RegistryValueKind.Binary);
