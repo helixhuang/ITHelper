@@ -30,7 +30,7 @@ namespace ITHelper
         {
             LoadActions();
             setSysInfoNameLabel();
-            //CheckSystemInfo();
+            CheckSystemInfo();
         }
         //系统信息检测
         private void CheckSystemInfo()
