@@ -23,6 +23,42 @@ namespace ITHelper
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadActions();
+            setSysInfoNameLabel();
+            CheckSystemInfo();
+        }
+        //系统信息检测
+        private void CheckSystemInfo()
+        {
+            BaseAction baseAction = new SystemInfoAction();
+            baseAction.Notify += baseAction_Notify;
+            baseAction.Exec();
+        }
+
+        private void setSysInfoNameLabel()
+        {
+            String sysInfoName = "计算机\n" + 
+                                  "     计算机名：\n" + 
+                                  "     计算机全名：\n" + 
+                                  "     域：\n" + 
+                                  "     当前用户：\n" +
+                                  "操作系统\n" + 
+                                  "     名称：\n" + 
+                                  "     版本:\n" + 
+                                  "     位数：\n" + 
+                                  "     路径：\n" + 
+                                  "网络\n" + 
+                                  "     IP地址：\n" +
+                                  "     子网掩码：\n" + 
+                                  "     网关地址：\n" +
+                                  "     首选DNS地址：\n" + 
+                                  "应用程序\n" + 
+                                  "     Office版本：\n"+
+                                  "     IE版本：\n"+
+                                  "主板\n"+
+                                  "     主板型号：\n"+
+                                  "     CPU型号：\n"+
+                                  "     CPU主频：\n";
+            sysInfoNameLabel.Text = sysInfoName;
         }
 
         private void LoadActions()
@@ -57,6 +93,7 @@ namespace ITHelper
             startActionButton.Enabled = false;
             actionListBox.Enabled = false;
             eventListBox.Items.Clear();
+            //as
             ActionGroup actionGroup = actionListBox.SelectedItem as ActionGroup;
             BackgroundWorker bw = new BackgroundWorker();
             bw.DoWork += Action_DoWork;
@@ -95,6 +132,7 @@ namespace ITHelper
                 try
                 {
                     BaseAction action = ActionFactory.GetAction(actionNode as XmlElement);
+                    //action.Notify += action_Notify;
                     action.Notify += (o, a) =>
                     {
                         bw.ReportProgress(0, a);
@@ -111,6 +149,11 @@ namespace ITHelper
             e.Result = e.Argument;
         }
 
+        //void action_Notify(object sender, ActionEventArgs e)
+        //{
+        //    bw.ReportProgress(0, a);
+        //}
+
         void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox about = new AboutBox();
@@ -123,7 +166,14 @@ namespace ITHelper
             Application.Exit();
         }
 
+        private void tabPageScan_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        void baseAction_Notify(object sender, ActionEventArgs e)
+        {
+            sysInfoLabel.Text = e.Message;
+        }
     }
 }

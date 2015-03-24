@@ -67,7 +67,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.runasObjectListBox);
+            //this.splitContainer1.Panel1.Controls.Add(this.runasObjectListBox);
             // 
             // splitContainer1.Panel2
             // 
