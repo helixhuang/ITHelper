@@ -10,6 +10,7 @@ namespace cn.antontech.ITHelper.AutoActions
         public ActionGroup(XmlElement node)
         {
             this.Name = node.Attributes["Name"].Value;
+            this.NeedAdmin = node.HasAttribute("NeedAdmin") ? bool.Parse(node.Attributes["NeedAdmin"].Value) : false;
             this.ActionList = new List<XmlElement>();
             foreach (XmlNode actionNode in node.ChildNodes)
             {
@@ -21,6 +22,7 @@ namespace cn.antontech.ITHelper.AutoActions
             }
         }
         public string Name { get; set; }
+        public bool NeedAdmin { get; set; }
         public List<XmlElement> ActionList { get; set; }
     }
 }

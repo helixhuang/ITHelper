@@ -35,7 +35,7 @@
     <OpenIE Url="http://oa.antonoil.com" />
   </ActionGroup>
   -->
-  <ActionGroup Name="新机器安装默认设置">
+  <ActionGroup Name="新机器安装默认设置" NeedAdmin="True">
     <CompatibilityView Domain="192.168.100.245" />
     <CompatibilityView Domain="192.168.100.250" />
     <CompatibilityView Domain="219.238.8.102" />
@@ -54,7 +54,7 @@
     <CopyFile OS="x64" From="OA\OA-64.lnk" To="%DesktopDirectory%\OA.lnk"/>
     <IEHome Url="http://www.antonoil.com" />
   </ActionGroup>
-  <ActionGroup Name="解决IE11下的OA问题">
+  <ActionGroup Name="解决IE11下的OA问题" NeedAdmin="True">
     <SecurityZone Domain="oa.antonoil.com"/>
     <SecurityZone Domain="192.168.100.245"/>
     <Install Name="E-cology控件" Path="OA\Ecologyplugin.exe"/>
@@ -70,5 +70,8 @@
   <ActionGroup Name="安装公司PPT模版">
     <CopyFile OS="ALL" From="PPT\安东新版-宽屏.thmx" To="%ApplicationData%\Microsoft\Templates\Document Themes\安东新版-宽屏.thmx"/>
     <CopyFile OS="ALL" From="PPT\安东新版-普通.thmx" To="%ApplicationData%\Microsoft\Templates\Document Themes\安东新版-普通.thmx"/>
+  </ActionGroup>
+  <ActionGroup Name="导入CA证书" NeedAdmin="True">
+    <RootCa Name="rootca证书" Path="RootCa\rootca.cer" />
   </ActionGroup>
 </Actions>

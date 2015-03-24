@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Deployment.Application;
 using System.Drawing;
 using System.Reflection;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace ITHelper
@@ -14,10 +16,21 @@ namespace ITHelper
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                this.labelVersion.Text = String.Format("Version {0}", ApplicationDeployment.CurrentDeployment.CurrentVersion);
+            }
+            else
+            {
+                this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            }
+            
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
+
+            this.labelRunas.Text = RunAsHelper.IsRunAsAdmin() ? "当前运行帐号：管理员" : "当前运行帐号：普通";
+
         }
 
         #region Assembly Attribute Accessors

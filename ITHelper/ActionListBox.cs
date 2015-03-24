@@ -73,7 +73,8 @@ namespace ITHelper
             // 
             // ActionListBox
             // 
-            this.Size = new System.Drawing.Size(120, 95);
+            this.ItemHeight = 12;
+            this.Size = new System.Drawing.Size(120, 88);
             this.ResumeLayout(false);
 
         }

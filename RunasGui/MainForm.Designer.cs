@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.runasObjectListBox = new RunasGui.RunasObjectListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnShortcut = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.Label();
@@ -49,7 +51,6 @@
             this.btnSelectPath = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.runasObjectListBox = new RunasGui.RunasObjectListBox();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -76,6 +77,22 @@
             this.splitContainer1.SplitterDistance = 222;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // runasObjectListBox
+            // 
+            this.runasObjectListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.runasObjectListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.runasObjectListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.runasObjectListBox.FormattingEnabled = true;
+            this.runasObjectListBox.IntegralHeight = false;
+            this.runasObjectListBox.ItemHeight = 25;
+            this.runasObjectListBox.Location = new System.Drawing.Point(0, 0);
+            this.runasObjectListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.runasObjectListBox.Name = "runasObjectListBox";
+            this.runasObjectListBox.Size = new System.Drawing.Size(222, 439);
+            this.runasObjectListBox.TabIndex = 0;
+            this.runasObjectListBox.SelectedIndexChanged += new System.EventHandler(this.runasObjectListBox_SelectedIndexChanged);
+            this.runasObjectListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.runasObjectListBox_MouseDoubleClick);
             // 
             // tableLayoutPanel1
             // 
@@ -117,8 +134,9 @@
             // 
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnCount = 5;
             this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 3);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -127,12 +145,13 @@
             this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnRun, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnDelete, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnShortcut, 4, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(280, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(398, 41);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // btnCreate
@@ -204,6 +223,23 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnShortcut
+            // 
+            this.btnShortcut.AutoSize = true;
+            this.btnShortcut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnShortcut.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnShortcut.Image")));
+            this.btnShortcut.Location = new System.Drawing.Point(283, 4);
+            this.btnShortcut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShortcut.Name = "btnShortcut";
+            this.btnShortcut.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnShortcut.Size = new System.Drawing.Size(112, 33);
+            this.btnShortcut.TabIndex = 4;
+            this.btnShortcut.Text = "桌面快捷方式";
+            this.btnShortcut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnShortcut.UseVisualStyleBackColor = true;
+            this.btnShortcut.Click += new System.EventHandler(this.btnShortcut_Click);
+            // 
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -211,7 +247,7 @@
             this.txtPassword.AutoSize = true;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtPassword.Location = new System.Drawing.Point(36, 296);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(12);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(32, 25);
             this.txtPassword.TabIndex = 4;
@@ -224,7 +260,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPassword.Location = new System.Drawing.Point(92, 296);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(12);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '●';
             this.tbPassword.Size = new System.Drawing.Size(473, 22);
@@ -237,7 +273,7 @@
             this.txtUserName.AutoSize = true;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtUserName.Location = new System.Drawing.Point(24, 250);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(12);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(44, 22);
             this.txtUserName.TabIndex = 3;
@@ -250,7 +286,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbUserName.Location = new System.Drawing.Point(92, 250);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.tbUserName.Margin = new System.Windows.Forms.Padding(12);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(473, 22);
             this.tbUserName.TabIndex = 8;
@@ -262,7 +298,7 @@
             this.txtDomain.AutoSize = true;
             this.txtDomain.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDomain.Location = new System.Drawing.Point(48, 204);
-            this.txtDomain.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.txtDomain.Margin = new System.Windows.Forms.Padding(12);
             this.txtDomain.Name = "txtDomain";
             this.txtDomain.Size = new System.Drawing.Size(20, 22);
             this.txtDomain.TabIndex = 2;
@@ -275,7 +311,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbDomain.Location = new System.Drawing.Point(92, 204);
-            this.tbDomain.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.tbDomain.Margin = new System.Windows.Forms.Padding(12);
             this.tbDomain.Name = "tbDomain";
             this.tbDomain.Size = new System.Drawing.Size(473, 22);
             this.tbDomain.TabIndex = 7;
@@ -287,7 +323,7 @@
             this.txtArg.AutoSize = true;
             this.txtArg.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtArg.Location = new System.Drawing.Point(12, 158);
-            this.txtArg.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.txtArg.Margin = new System.Windows.Forms.Padding(12);
             this.txtArg.Name = "txtArg";
             this.txtArg.Size = new System.Drawing.Size(56, 22);
             this.txtArg.TabIndex = 1;
@@ -300,7 +336,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbArg.Location = new System.Drawing.Point(92, 158);
-            this.tbArg.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.tbArg.Margin = new System.Windows.Forms.Padding(12);
             this.tbArg.Name = "tbArg";
             this.tbArg.Size = new System.Drawing.Size(473, 22);
             this.tbArg.TabIndex = 6;
@@ -312,7 +348,7 @@
             this.txtPath.AutoSize = true;
             this.txtPath.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtPath.Location = new System.Drawing.Point(12, 107);
-            this.txtPath.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(12);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(56, 27);
             this.txtPath.TabIndex = 0;
@@ -325,7 +361,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPath.Location = new System.Drawing.Point(92, 107);
-            this.tbPath.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.tbPath.Margin = new System.Windows.Forms.Padding(12);
             this.tbPath.Name = "tbPath";
             this.tbPath.Size = new System.Drawing.Size(473, 22);
             this.tbPath.TabIndex = 5;
@@ -336,7 +372,7 @@
             this.btnSelectPath.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSelectPath.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSelectPath.Location = new System.Drawing.Point(589, 107);
-            this.btnSelectPath.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.btnSelectPath.Margin = new System.Windows.Forms.Padding(12);
             this.btnSelectPath.Name = "btnSelectPath";
             this.btnSelectPath.Size = new System.Drawing.Size(42, 27);
             this.btnSelectPath.TabIndex = 11;
@@ -351,7 +387,7 @@
             this.txtName.AutoSize = true;
             this.txtName.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtName.Location = new System.Drawing.Point(36, 61);
-            this.txtName.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.txtName.Margin = new System.Windows.Forms.Padding(12);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(32, 22);
             this.txtName.TabIndex = 12;
@@ -364,26 +400,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbName.Location = new System.Drawing.Point(92, 61);
-            this.tbName.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.tbName.Margin = new System.Windows.Forms.Padding(12);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(473, 22);
             this.tbName.TabIndex = 13;
-            // 
-            // runasObjectListBox
-            // 
-            this.runasObjectListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.runasObjectListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.runasObjectListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.runasObjectListBox.FormattingEnabled = true;
-            this.runasObjectListBox.IntegralHeight = false;
-            this.runasObjectListBox.ItemHeight = 25;
-            this.runasObjectListBox.Location = new System.Drawing.Point(0, 0);
-            this.runasObjectListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.runasObjectListBox.Name = "runasObjectListBox";
-            this.runasObjectListBox.Size = new System.Drawing.Size(222, 439);
-            this.runasObjectListBox.TabIndex = 0;
-            this.runasObjectListBox.SelectedIndexChanged += new System.EventHandler(this.runasObjectListBox_SelectedIndexChanged);
-            this.runasObjectListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.runasObjectListBox_MouseDoubleClick);
             // 
             // MainForm
             // 
@@ -434,6 +454,7 @@
         private System.Windows.Forms.Label txtName;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnShortcut;
     }
 }
 
