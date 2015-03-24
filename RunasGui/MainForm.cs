@@ -143,7 +143,6 @@ namespace RunasGui
             {
                 tbPath.Text = diag.FileName;
             }
-
         }
 
         private void btnShortcut_Click(object sender, EventArgs e)
