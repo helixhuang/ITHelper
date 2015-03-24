@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -23,6 +24,10 @@ namespace ITHelper
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadActions();
+            StringBuilder sb = new StringBuilder();
+            sb.Append(Application.StartupPath);
+            this.webLinks.Url = new System.Uri(string.Format("{0}{1}",sb.ToString(),"\\html\\Links.html"), System.UriKind.Absolute);
+            this.webSoft.Url = new System.Uri(string.Format("{0}{1}",sb.ToString(),"\\html\\SoftCenter.html"), System.UriKind.Absolute);
         }
 
         private void LoadActions()

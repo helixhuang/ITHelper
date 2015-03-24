@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>常用链接</title>
+<link href="../css/tab.css" rel="stylesheet" />
+<script type="text/javascript">
+    function setTab(name,curse) {
+        var count = document.getElementById("menu").getElementsByTagName("li").length;
+        for (var i = 1; i <= count; i++)
+        {
+            var menu = document.getElementById(name + i);
+            var menudiv = document.getElementById("content_" + i);
+            if(i == curse)
+            {
+                menu.className = "off";
+                menudiv.style.display = "block";
+            }
+            else
+            {
+                menu.className = "";
+                menudiv.style.display = "none";
+            }
+        }
+    }
+</script>
+</head>
+<body>
+
+<!-- tab标签代码begin -->
+<div class="tab1">
+	<div class="menu" id="menu">
+		<ul>
+			<li id="one1" onclick="setTab('one',1)" class="off">公网平台</li>
+			<li id="one2" onclick="setTab('one',2)">内网平台</li>
+			<li id="one3" onclick="setTab('one',3)">企业应用商店</li>
+		</ul>
+	</div>
+	<div class="menudiv">
+		<div id="content_1" style="display:block">
+            <ul>
+                <li>
+                    <a href="https://home.antonoil.com" style="text-decoration:none" target="_blank">【公网】协作共享平台</a>
+                </li>
+                <li>
+                    <a href="https://vpn.antonoil.com" style="text-decoration:none" target="_blank">【公网】VPN</a>
+                </li>
+                <li>
+                <a href="https://mail.antonoil.com" style="text-decoration:none" target="_blank">【公网】邮件平台</a>
+                </li>
+                <li>
+                <a href="https://home.antonoil.com/informatization/_layouts/15/Antonoil.GlobalService/PrinterLocation.aspx"
+                       style="text-decoration:none" target="_blank">【公网】打印机共享平台</a>
+                </li>
+            </ul>
+        </div>
+		<div id="content_2" style="display:none;">
+            <ul>
+                <li>
+                    <a href="https://oa.antonoil.com" style="text-decoration:none" target="_blank">【内网】OA</a>
+                </li>
+                <li>
+                    <a href="http://bi.antonoil.com:8000" style="text-decoration:none" target="_blank">【内网】ERP</a>
+                </li>
+                <li>
+                    <a href="http://10.10.1.80:8000" style="text-decoration:none" target="_blank">【内网】PS</a>
+                </li>
+            </ul>
+        </div>
+		<div id="content_3" style="display:none;text-align:center">
+            <img src="../img/store/store.png" />
+        </div>
+	</div>
+</div>
+<!-- tab标签代码end -->
+
+</body>
+</html>

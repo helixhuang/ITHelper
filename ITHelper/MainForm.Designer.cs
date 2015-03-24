@@ -42,18 +42,20 @@
             this.copyrightLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageFix = new System.Windows.Forms.TabPage();
+            this.splitContainerAction = new System.Windows.Forms.SplitContainer();
+            this.actionListBox = new ITHelper.ActionListBox();
+            this.actionTab = new System.Windows.Forms.TabControl();
+            this.actionTabPage = new System.Windows.Forms.TabPage();
+            this.eventListBox = new ITHelper.EventListBox();
+            this.toolStripAction = new System.Windows.Forms.ToolStrip();
+            this.startActionButton = new System.Windows.Forms.ToolStripButton();
             this.tabPageScan = new System.Windows.Forms.TabPage();
             this.tabPageSoftware = new System.Windows.Forms.TabPage();
             this.tabPageLinks = new System.Windows.Forms.TabPage();
+            this.webLinks = new System.Windows.Forms.WebBrowser();
             this.tabPageSchool = new System.Windows.Forms.TabPage();
             this.tabPageHelper = new System.Windows.Forms.TabPage();
-            this.splitContainerAction = new System.Windows.Forms.SplitContainer();
-            this.actionTab = new System.Windows.Forms.TabControl();
-            this.actionTabPage = new System.Windows.Forms.TabPage();
-            this.toolStripAction = new System.Windows.Forms.ToolStrip();
-            this.startActionButton = new System.Windows.Forms.ToolStripButton();
-            this.actionListBox = new ITHelper.ActionListBox();
-            this.eventListBox = new ITHelper.EventListBox();
+            this.webSoft = new System.Windows.Forms.WebBrowser();
             this.menuTop.SuspendLayout();
             this.statusBottom.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -64,6 +66,8 @@
             this.actionTab.SuspendLayout();
             this.actionTabPage.SuspendLayout();
             this.toolStripAction.SuspendLayout();
+            this.tabPageSoftware.SuspendLayout();
+            this.tabPageLinks.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuTop
@@ -177,59 +181,6 @@
             this.tabPageFix.Text = "一键修复";
             this.tabPageFix.UseVisualStyleBackColor = true;
             // 
-            // tabPageScan
-            // 
-            this.tabPageScan.ImageIndex = 3;
-            this.tabPageScan.Location = new System.Drawing.Point(4, 25);
-            this.tabPageScan.Name = "tabPageScan";
-            this.tabPageScan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageScan.Size = new System.Drawing.Size(715, 277);
-            this.tabPageScan.TabIndex = 1;
-            this.tabPageScan.Text = "系统检测";
-            this.tabPageScan.UseVisualStyleBackColor = true;
-            // 
-            // tabPageSoftware
-            // 
-            this.tabPageSoftware.ImageIndex = 2;
-            this.tabPageSoftware.Location = new System.Drawing.Point(4, 25);
-            this.tabPageSoftware.Name = "tabPageSoftware";
-            this.tabPageSoftware.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSoftware.Size = new System.Drawing.Size(715, 277);
-            this.tabPageSoftware.TabIndex = 2;
-            this.tabPageSoftware.Text = "软件百宝箱";
-            this.tabPageSoftware.UseVisualStyleBackColor = true;
-            // 
-            // tabPageLinks
-            // 
-            this.tabPageLinks.ImageIndex = 1;
-            this.tabPageLinks.Location = new System.Drawing.Point(4, 25);
-            this.tabPageLinks.Name = "tabPageLinks";
-            this.tabPageLinks.Size = new System.Drawing.Size(715, 277);
-            this.tabPageLinks.TabIndex = 3;
-            this.tabPageLinks.Text = "公司网址";
-            this.tabPageLinks.UseVisualStyleBackColor = true;
-            // 
-            // tabPageSchool
-            // 
-            this.tabPageSchool.ImageIndex = 4;
-            this.tabPageSchool.Location = new System.Drawing.Point(4, 25);
-            this.tabPageSchool.Name = "tabPageSchool";
-            this.tabPageSchool.Size = new System.Drawing.Size(715, 277);
-            this.tabPageSchool.TabIndex = 4;
-            this.tabPageSchool.Text = "信息化学苑";
-            this.tabPageSchool.UseVisualStyleBackColor = true;
-            // 
-            // tabPageHelper
-            // 
-            this.tabPageHelper.ImageIndex = 5;
-            this.tabPageHelper.Location = new System.Drawing.Point(4, 25);
-            this.tabPageHelper.Name = "tabPageHelper";
-            this.tabPageHelper.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHelper.Size = new System.Drawing.Size(715, 277);
-            this.tabPageHelper.TabIndex = 5;
-            this.tabPageHelper.Text = "IT服务地图";
-            this.tabPageHelper.UseVisualStyleBackColor = true;
-            // 
             // splitContainerAction
             // 
             this.splitContainerAction.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -248,6 +199,20 @@
             this.splitContainerAction.SplitterDistance = 173;
             this.splitContainerAction.SplitterWidth = 5;
             this.splitContainerAction.TabIndex = 5;
+            // 
+            // actionListBox
+            // 
+            this.actionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actionListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.actionListBox.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.actionListBox.FormattingEnabled = true;
+            this.actionListBox.IntegralHeight = false;
+            this.actionListBox.ItemHeight = 25;
+            this.actionListBox.Location = new System.Drawing.Point(0, 0);
+            this.actionListBox.Name = "actionListBox";
+            this.actionListBox.Size = new System.Drawing.Size(173, 271);
+            this.actionListBox.TabIndex = 0;
+            this.actionListBox.SelectedIndexChanged += new System.EventHandler(this.actionListBox_SelectedIndexChanged);
             // 
             // actionTab
             // 
@@ -276,6 +241,18 @@
             this.actionTabPage.Text = "tabPage2";
             this.actionTabPage.UseVisualStyleBackColor = true;
             // 
+            // eventListBox
+            // 
+            this.eventListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eventListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.eventListBox.FormattingEnabled = true;
+            this.eventListBox.IntegralHeight = false;
+            this.eventListBox.ItemHeight = 25;
+            this.eventListBox.Location = new System.Drawing.Point(3, 31);
+            this.eventListBox.Name = "eventListBox";
+            this.eventListBox.Size = new System.Drawing.Size(517, 204);
+            this.eventListBox.TabIndex = 1;
+            // 
             // toolStripAction
             // 
             this.toolStripAction.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -296,31 +273,79 @@
             this.startActionButton.Text = "执行";
             this.startActionButton.Click += new System.EventHandler(this.startActionButton_Click);
             // 
-            // actionListBox
+            // tabPageScan
             // 
-            this.actionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.actionListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.actionListBox.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.actionListBox.FormattingEnabled = true;
-            this.actionListBox.IntegralHeight = false;
-            this.actionListBox.ItemHeight = 25;
-            this.actionListBox.Location = new System.Drawing.Point(0, 0);
-            this.actionListBox.Name = "actionListBox";
-            this.actionListBox.Size = new System.Drawing.Size(173, 271);
-            this.actionListBox.TabIndex = 0;
-            this.actionListBox.SelectedIndexChanged += new System.EventHandler(this.actionListBox_SelectedIndexChanged);
+            this.tabPageScan.ImageIndex = 3;
+            this.tabPageScan.Location = new System.Drawing.Point(4, 25);
+            this.tabPageScan.Name = "tabPageScan";
+            this.tabPageScan.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageScan.Size = new System.Drawing.Size(715, 277);
+            this.tabPageScan.TabIndex = 1;
+            this.tabPageScan.Text = "系统检测";
+            this.tabPageScan.UseVisualStyleBackColor = true;
             // 
-            // eventListBox
+            // tabPageSoftware
             // 
-            this.eventListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.eventListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.eventListBox.FormattingEnabled = true;
-            this.eventListBox.IntegralHeight = false;
-            this.eventListBox.ItemHeight = 25;
-            this.eventListBox.Location = new System.Drawing.Point(3, 31);
-            this.eventListBox.Name = "eventListBox";
-            this.eventListBox.Size = new System.Drawing.Size(517, 204);
-            this.eventListBox.TabIndex = 1;
+            this.tabPageSoftware.Controls.Add(this.webSoft);
+            this.tabPageSoftware.ImageIndex = 2;
+            this.tabPageSoftware.Location = new System.Drawing.Point(4, 25);
+            this.tabPageSoftware.Name = "tabPageSoftware";
+            this.tabPageSoftware.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageSoftware.Size = new System.Drawing.Size(715, 277);
+            this.tabPageSoftware.TabIndex = 2;
+            this.tabPageSoftware.Text = "软件百宝箱";
+            this.tabPageSoftware.UseVisualStyleBackColor = true;
+            // 
+            // tabPageLinks
+            // 
+            this.tabPageLinks.Controls.Add(this.webLinks);
+            this.tabPageLinks.ImageIndex = 1;
+            this.tabPageLinks.Location = new System.Drawing.Point(4, 25);
+            this.tabPageLinks.Name = "tabPageLinks";
+            this.tabPageLinks.Size = new System.Drawing.Size(715, 277);
+            this.tabPageLinks.TabIndex = 3;
+            this.tabPageLinks.Text = "公司网址";
+            this.tabPageLinks.UseVisualStyleBackColor = true;
+            // 
+            // webLinks
+            // 
+            this.webLinks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webLinks.Location = new System.Drawing.Point(0, 0);
+            this.webLinks.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webLinks.Name = "webLinks";
+            this.webLinks.Size = new System.Drawing.Size(715, 277);
+            this.webLinks.TabIndex = 0;
+            this.webLinks.Url = new System.Uri("", System.UriKind.Relative);
+            // 
+            // tabPageSchool
+            // 
+            this.tabPageSchool.ImageIndex = 4;
+            this.tabPageSchool.Location = new System.Drawing.Point(4, 25);
+            this.tabPageSchool.Name = "tabPageSchool";
+            this.tabPageSchool.Size = new System.Drawing.Size(715, 277);
+            this.tabPageSchool.TabIndex = 4;
+            this.tabPageSchool.Text = "信息化学苑";
+            this.tabPageSchool.UseVisualStyleBackColor = true;
+            // 
+            // tabPageHelper
+            // 
+            this.tabPageHelper.ImageIndex = 5;
+            this.tabPageHelper.Location = new System.Drawing.Point(4, 25);
+            this.tabPageHelper.Name = "tabPageHelper";
+            this.tabPageHelper.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageHelper.Size = new System.Drawing.Size(715, 277);
+            this.tabPageHelper.TabIndex = 5;
+            this.tabPageHelper.Text = "IT服务地图";
+            this.tabPageHelper.UseVisualStyleBackColor = true;
+            // 
+            // webSoft
+            // 
+            this.webSoft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webSoft.Location = new System.Drawing.Point(3, 3);
+            this.webSoft.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webSoft.Name = "webSoft";
+            this.webSoft.Size = new System.Drawing.Size(709, 271);
+            this.webSoft.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -351,6 +376,8 @@
             this.actionTabPage.PerformLayout();
             this.toolStripAction.ResumeLayout(false);
             this.toolStripAction.PerformLayout();
+            this.tabPageSoftware.ResumeLayout(false);
+            this.tabPageLinks.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,6 +409,8 @@
         private System.Windows.Forms.TabPage tabPageSchool;
         private System.Windows.Forms.ImageList imageIcons;
         private System.Windows.Forms.TabPage tabPageHelper;
+        private System.Windows.Forms.WebBrowser webLinks;
+        private System.Windows.Forms.WebBrowser webSoft;
     }
 }
 
