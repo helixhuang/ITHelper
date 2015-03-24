@@ -43,7 +43,6 @@ namespace ITHelper
         void baseAction_Notify(object sender, ActionEventArgs e)
         {
             sysInfoLabel.Text = e.Message;
-            throw new NotImplementedException();
         }
 
         private void setSysInfoNameLabel()
