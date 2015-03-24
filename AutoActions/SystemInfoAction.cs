@@ -17,7 +17,7 @@ namespace cn.antontech.ITHelper.AutoActions
         {
             String systemInfo = "\n" +
                                 checkComputerInfo.getHostName() + "\n" +
-                                                                checkComputerInfo.getHostFullName() + "\n" +
+                                checkComputerInfo.getHostFullName() + "\n" +
                                 checkComputerInfo.getDomainName() + "\n" +
                                 checkComputerInfo.getOSCurrentUser() + "\n" +
                                 "\n" +

@@ -52,12 +52,25 @@
             this.toolStripAction = new System.Windows.Forms.ToolStrip();
             this.startActionButton = new System.Windows.Forms.ToolStripButton();
             this.tabPageScan = new System.Windows.Forms.TabPage();
+            this.sysInfoNameLabel = new System.Windows.Forms.Label();
             this.tabPageSoftware = new System.Windows.Forms.TabPage();
             this.tabPageLinks = new System.Windows.Forms.TabPage();
             this.tabPageSchool = new System.Windows.Forms.TabPage();
             this.tabPageHelper = new System.Windows.Forms.TabPage();
+            this.sysInfoLabel = new System.Windows.Forms.Label();
+            //this.splitContainerAction = new System.Windows.Forms.SplitContainer();
+            //this.actionListBox = new ITHelper.ActionListBox();
+            //this.actionTab = new System.Windows.Forms.TabControl();
+           // this.actionTabPage = new System.Windows.Forms.TabPage();
+           // this.eventListBox = new ITHelper.EventListBox();
+            //this.toolStripAction = new System.Windows.Forms.ToolStrip();
+           // this.startActionButton = new System.Windows.Forms.ToolStripButton();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTop.SuspendLayout();
+            this.statusBottom.SuspendLayout();
+            this.tabControlMain.SuspendLayout();
+            this.tabPageFix.SuspendLayout();
+            this.tabPageScan.SuspendLayout();
             this.statusBottom.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageFix.SuspendLayout();
@@ -289,6 +302,8 @@
             // 
             // tabPageScan
             // 
+            this.tabPageScan.Controls.Add(this.sysInfoLabel);
+            this.tabPageScan.Controls.Add(this.sysInfoNameLabel);
             this.tabPageScan.ImageIndex = 3;
             this.tabPageScan.Location = new System.Drawing.Point(4, 25);
             this.tabPageScan.Name = "tabPageScan";
@@ -297,6 +312,15 @@
             this.tabPageScan.TabIndex = 1;
             this.tabPageScan.Text = "系统检测";
             this.tabPageScan.UseVisualStyleBackColor = true;
+            // 
+            // sysInfoNameLabel
+            // 
+            this.sysInfoNameLabel.AutoSize = true;
+            this.sysInfoNameLabel.Location = new System.Drawing.Point(18, 16);
+            this.sysInfoNameLabel.Name = "sysInfoNameLabel";
+            this.sysInfoNameLabel.Size = new System.Drawing.Size(74, 16);
+            this.sysInfoNameLabel.TabIndex = 0;
+            this.sysInfoNameLabel.Text = "系统信息名称";
             // 
             // tabPageSoftware
             // 
@@ -329,6 +353,15 @@
             this.tabPageSchool.Text = "信息化学苑";
             this.tabPageSchool.UseVisualStyleBackColor = true;
             // 
+            // sysInfoLabel
+            // 
+            this.sysInfoLabel.AutoSize = true;
+            this.sysInfoLabel.Location = new System.Drawing.Point(128, 16);
+            this.sysInfoLabel.Name = "sysInfoLabel";
+            this.sysInfoLabel.Size = new System.Drawing.Size(52, 16);
+            this.sysInfoLabel.TabIndex = 1;
+            this.sysInfoLabel.Text = "系统信息";
+            //
             // tabPageHelper
             // 
             this.tabPageHelper.ImageIndex = 5;
@@ -410,6 +443,8 @@
         private System.Windows.Forms.ToolStripMenuItem runAsAdminToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.Label sysInfoNameLabel;
+        private System.Windows.Forms.Label sysInfoLabel;
     }
 }
 
