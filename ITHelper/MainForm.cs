@@ -7,6 +7,7 @@ using System.Deployment.Application;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -31,6 +32,14 @@ namespace ITHelper
             LoadActions();
             setSysInfoNameLabel();
             CheckSystemInfo();
+            StringBuilder sbLinks = new StringBuilder();
+            sbLinks.Append(Application.StartupPath);
+            sbLinks.Append("\\html\\Links.html");
+            this.webLinks.Url = new System.Uri(sbLinks.ToString(), System.UriKind.Absolute);
+            StringBuilder sbSoft = new StringBuilder();
+            sbSoft.Append(Application.StartupPath);
+            sbSoft.Append("\\html\\SoftCenter.html");
+            this.webSoft.Url = new System.Uri(sbSoft.ToString(), System.UriKind.Absolute);
         }
         //系统信息检测
         private void CheckSystemInfo()
