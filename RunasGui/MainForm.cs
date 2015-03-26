@@ -23,7 +23,7 @@ namespace RunasGui
         {
             InitializeComponent();
             LoadData();
-            
+
         }
 
         private void LoadData()
@@ -144,6 +144,34 @@ namespace RunasGui
                 tbPath.Text = diag.FileName;
             }
 
+        }
+
+        private void btnShortcut_Click(object sender, EventArgs e)
+        {
+            if (_isNew)
+            {
+                MessageBox.Show("请先保存");
+            }
+            if (string.IsNullOrEmpty(_currentObject.ExeFile)
+                || string.IsNullOrEmpty(_currentObject.Name))
+            {
+                MessageBox.Show("数据不完整");
+            }
+            Icon appIcon = Icon.ExtractAssociatedIcon(_currentObject.ExeFile);
+            if (!Directory.Exists("Icons")) Directory.CreateDirectory("Icons");
+            string iconFile = string.Format("{0}\\Icons\\{1}.ico", System.Environment.CurrentDirectory, _currentObject.Name);
+            using (FileStream fs = new FileStream(iconFile, FileMode.Create))
+            {
+                appIcon.Save(fs);
+            }
+
+            IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
+            IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(String.Format("{0}\\{1}.lnk", Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), _currentObject.Name));
+            shortcut.TargetPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            shortcut.Arguments = _currentObject.Name;
+            shortcut.WorkingDirectory = System.Environment.CurrentDirectory;
+            shortcut.IconLocation = iconFile;
+            shortcut.Save();
         }
 
     }
