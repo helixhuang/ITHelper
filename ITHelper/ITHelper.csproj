@@ -29,7 +29,7 @@
     <PublisherName>北京安东软件技术有限公司</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -67,7 +67,7 @@
     <ApplicationIcon>administrative_tools.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B4E1F7010CEA9D68D1CE266EF2A926163FDC4E03</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B4B7D2C7413BCC178F888B6D502DEE84EBD00508</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>ITHelper.pfx</ManifestKeyFile>
@@ -76,7 +76,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>ITHelper.pfx</AssemblyOriginatorKeyFile>
@@ -145,7 +145,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ITHelper.pfx" />
     <Content Include="OA\OA-32.lnk">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -158,6 +157,7 @@
     <Content Include="PPT\安东新版-普通.thmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="ITHelper.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -235,4 +235,9 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="BeforePublish">
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>$(SolutionDir)Signtool\Signtool.exe sign /f $(ProjectDir)ITHelper.pfx  $(TargetDir)$(TargetFileName)</PostBuildEvent>
+  </PropertyGroup>
 </Project>
