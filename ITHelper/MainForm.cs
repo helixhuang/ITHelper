@@ -32,8 +32,14 @@ namespace ITHelper
             LoadActions();
             setSysInfoNameLabel();
             CheckSystemInfo();
-            this.webLinks.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Links.html"); 
-            this.webSoft.Url = new Uri("http://www.antontech.cn/publish/ITHelper/SoftCenter.html");
+            StringBuilder sbLinks = new StringBuilder();
+            sbLinks.Append(Application.StartupPath);
+            sbLinks.Append("\\html\\Links.html");
+            this.webLinks.Url = new System.Uri(sbLinks.ToString(), System.UriKind.Absolute);
+            StringBuilder sbSoft = new StringBuilder();
+            sbSoft.Append(Application.StartupPath);
+            sbSoft.Append("\\html\\SoftCenter.html");
+            this.webSoft.Url = new System.Uri(sbSoft.ToString(), System.UriKind.Absolute);
         }
         //系统信息检测
         private void CheckSystemInfo()
