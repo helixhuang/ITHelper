@@ -317,7 +317,7 @@
             this.webSoft.MinimumSize = new System.Drawing.Size(20, 20);
             this.webSoft.Name = "webSoft";
             this.webSoft.ScriptErrorsSuppressed = true;
-            this.webSoft.Size = new System.Drawing.Size(709, 273);
+            this.webSoft.Size = new System.Drawing.Size(709, 271);
             this.webSoft.TabIndex = 0;
             // 
             // tabPageLinks
@@ -338,7 +338,7 @@
             this.webLinks.MinimumSize = new System.Drawing.Size(20, 20);
             this.webLinks.Name = "webLinks";
             this.webLinks.ScriptErrorsSuppressed = true;
-            this.webLinks.Size = new System.Drawing.Size(715, 279);
+            this.webLinks.Size = new System.Drawing.Size(715, 277);
             this.webLinks.TabIndex = 0;
             // 
             // tabPageSchool
@@ -449,7 +449,6 @@
         private System.Windows.Forms.TabPage tabPageScan;
         private System.Windows.Forms.TabPage tabPageSoftware;
         private System.Windows.Forms.TabPage tabPageLinks;
-        private System.Windows.Forms.TabPage tabPageSchool;
         private System.Windows.Forms.ImageList imageIcons;
         private System.Windows.Forms.TabPage tabPageHelper;
         private System.Windows.Forms.ToolStripMenuItem runAsAdminToolStripMenuItem;
@@ -458,6 +457,7 @@
         private System.Windows.Forms.WebBrowser webSoft;
         private System.Windows.Forms.WebBrowser webLinks;
         private System.Windows.Forms.TextBox SystemInfoTxt;
+        private System.Windows.Forms.TabPage tabPageSchool;
     }
 }
 

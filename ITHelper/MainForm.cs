@@ -33,6 +33,8 @@ namespace ITHelper
             //setSysInfoNameLabel();
             this.webLinks.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Links.html"); 
             this.webSoft.Url = new Uri("http://www.antontech.cn/publish/ITHelper/SoftCenter.html");
+            this.tabPageHelper.Parent = null;
+            this.tabPageSchool.Parent = null;
         }
         //系统信息检测
         private void CheckSystemInfo()
