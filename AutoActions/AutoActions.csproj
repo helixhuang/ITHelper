@@ -62,6 +62,7 @@
     <Compile Include="SecurityZoneAction.cs" />
     <Compile Include="ShowMessageAction.cs" />
     <Compile Include="SystemInfoAction.cs" />
+    <Compile Include="WindowsUpdateAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ITHelper.pfx" />
@@ -91,6 +92,15 @@
       <VersionMinor>3</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WUApiLib">
+      <Guid>{B596CC9F-56E5-419E-A622-E01BB457431E}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
