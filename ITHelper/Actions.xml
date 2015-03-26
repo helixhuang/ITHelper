@@ -80,4 +80,12 @@
   <ActionGroup Name="修复WinSock协议" NeedAdmin="True">
     <WinSock FileName="cmd.exe" Arguments="/c netsh winsock reset" />
   </ActionGroup>
+  <ActionGroup Name="添加常用网址到收藏夹">
+    <AddWebSite Url="https://home.antonoil.com" SaveName="协作共享平台" />
+    <AddWebSite Url="https://vpn.antonoil.com" SaveName="VPN" />
+    <AddWebSite Url="https://mail.antonoil.com" SaveName="网页邮件" />
+    <AddWebSite Url="https://oa.antonoil.com" SaveName="OA" />
+    <AddWebSite Url="http://10.10.1.80:8000" SaveName="ERP" />
+    <AddWebSite Url="http://bi.antonoil.com:8000" SaveName="PS" />
+  </ActionGroup>
 </Actions>

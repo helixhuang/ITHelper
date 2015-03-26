@@ -232,7 +232,7 @@
             // 
             this.actionTab.Controls.Add(this.actionTabPage);
             this.actionTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.actionTab.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.actionTab.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.actionTab.ImageList = this.imageIcons;
             this.actionTab.Location = new System.Drawing.Point(0, 0);
             this.actionTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -267,7 +267,7 @@
             // 
             // startActionButton
             // 
-            this.startActionButton.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.startActionButton.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.startActionButton.Image = ((System.Drawing.Image)(resources.GetObject("startActionButton.Image")));
             this.startActionButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.startActionButton.Name = "startActionButton";
@@ -317,7 +317,7 @@
             this.webSoft.MinimumSize = new System.Drawing.Size(20, 20);
             this.webSoft.Name = "webSoft";
             this.webSoft.ScriptErrorsSuppressed = true;
-            this.webSoft.Size = new System.Drawing.Size(709, 271);
+            this.webSoft.Size = new System.Drawing.Size(709, 273);
             this.webSoft.TabIndex = 0;
             // 
             // tabPageLinks
@@ -338,7 +338,7 @@
             this.webLinks.MinimumSize = new System.Drawing.Size(20, 20);
             this.webLinks.Name = "webLinks";
             this.webLinks.ScriptErrorsSuppressed = true;
-            this.webLinks.Size = new System.Drawing.Size(715, 277);
+            this.webLinks.Size = new System.Drawing.Size(715, 279);
             this.webLinks.TabIndex = 0;
             // 
             // tabPageSchool
@@ -366,7 +366,7 @@
             // 
             this.actionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.actionListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.actionListBox.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.actionListBox.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.actionListBox.FormattingEnabled = true;
             this.actionListBox.IntegralHeight = false;
             this.actionListBox.ItemHeight = 25;
@@ -396,7 +396,7 @@
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.statusBottom);
             this.Controls.Add(this.menuTop);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuTop;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
