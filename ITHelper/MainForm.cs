@@ -30,7 +30,8 @@ namespace ITHelper
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadActions();
-            //setSysInfoNameLabel();
+            setSysInfoNameLabel();
+            CheckSystemInfo();
             this.webLinks.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Links.html"); 
             this.webSoft.Url = new Uri("http://www.antontech.cn/publish/ITHelper/SoftCenter.html");
         }
@@ -42,10 +43,36 @@ namespace ITHelper
             baseAction.Exec();
         }
 
-        private void baseAction_Notify(object sender, ActionEventArgs e)
+        void baseAction_Notify(object sender, ActionEventArgs e)
         {
-            //sysInfoLabel.Text = e.Message;
-            SystemInfoTxt.Text = e.Message;
+            sysInfoLabel.Text = e.Message;
+        }
+
+        private void setSysInfoNameLabel()
+        {
+            String sysInfoName = "计算机\n" +
+                                  "     计算机名：\n" +
+                                  "     计算机全名：\n" +
+                                  "     域：\n" +
+                                  "     当前用户：\n" +
+                                  "操作系统\n" +
+                                  "     名称：\n" +
+                                  "     版本:\n" +
+                                  "     位数：\n" +
+                                  "     路径：\n" +
+                                  "网络\n" +
+                                  "     IP地址：\n" +
+                                  "     子网掩码：\n" +
+                                  "     网关地址：\n" +
+                                  "     首选DNS地址：\n" +
+                                  "应用程序\n" +
+                                  "     Office版本：\n" +
+                                  "     IE版本：\n" +
+                                  "主板\n" +
+                                  "     主板型号：\n" +
+                                  "     CPU型号：\n" +
+                                  "     CPU主频：\n";
+            sysInfoNameLabel.Text = sysInfoName;
         }
 
         private void LoadActions()
@@ -241,14 +268,6 @@ namespace ITHelper
                 {
                     Process.Start("iexplore.exe","http://www.antontech.cn/publish/ITHelper/ITHelper.application");
                 }
-            }
-        }
-
-        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tabControlMain.SelectedIndex == 1)
-            {
-                CheckSystemInfo();
             }
         }
 
