@@ -63,6 +63,7 @@
     <Compile Include="ShowMessageAction.cs" />
     <Compile Include="SystemInfoAction.cs" />
     <Compile Include="WindowsUpdateAction.cs" />
+    <Compile Include="WinSockAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ITHelper.pfx" />

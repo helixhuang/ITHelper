@@ -10,7 +10,7 @@ namespace cn.antontech.ITHelper.AutoActions
     public class WindowsUpdateAction : BaseAction
     {
         private Config _config;
-         public WindowsUpdateAction(XmlElement config)
+        public WindowsUpdateAction(XmlElement config)
             : this(new Config(config))
         {
         }

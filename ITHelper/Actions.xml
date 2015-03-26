@@ -77,4 +77,7 @@
   <ActionGroup Name="禁止Windows更新" NeedAdmin="True">
     <WindowsUpdate Level="aunlDisabled" />
   </ActionGroup>
+  <ActionGroup Name="修复WinSock协议" NeedAdmin="True">
+    <WinSock FileName="cmd.exe" Arguments="/c netsh winsock reset" />
+  </ActionGroup>
 </Actions>
