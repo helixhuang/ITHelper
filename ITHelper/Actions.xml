@@ -74,4 +74,7 @@
   <ActionGroup Name="导入CA证书" NeedAdmin="True">
     <RootCa Name="rootca证书" Path="RootCa\rootca.cer" />
   </ActionGroup>
+  <ActionGroup Name="禁止Windows更新" NeedAdmin="True">
+    <WindowsUpdate Level="aunlDisabled" />
+  </ActionGroup>
 </Actions>
