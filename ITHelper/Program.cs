@@ -15,9 +15,17 @@ namespace ITHelper
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            if (System.Environment.OSVersion.Version.Major < 6)
+            {
+                MessageBox.Show("此应用不支持Windows XP");
+            }
+            else
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new MainForm());
+            }
+
         }
     }
 }

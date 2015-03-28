@@ -30,49 +30,11 @@ namespace ITHelper
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadActions();
-            setSysInfoNameLabel();
-            CheckSystemInfo();
             this.webLinks.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Links.html"); 
             this.webSoft.Url = new Uri("http://www.antontech.cn/publish/ITHelper/SoftCenter.html");
-        }
-        //系统信息检测
-        private void CheckSystemInfo()
-        {
-            BaseAction baseAction = new SystemInfoAction();
-            baseAction.Notify += baseAction_Notify;
-            baseAction.Exec();
-        }
-
-        void baseAction_Notify(object sender, ActionEventArgs e)
-        {
-            sysInfoLabel.Text = e.Message;
-        }
-
-        private void setSysInfoNameLabel()
-        {
-            String sysInfoName = "计算机\n" +
-                                  "     计算机名：\n" +
-                                  "     计算机全名：\n" +
-                                  "     域：\n" +
-                                  "     当前用户：\n" +
-                                  "操作系统\n" +
-                                  "     名称：\n" +
-                                  "     版本:\n" +
-                                  "     位数：\n" +
-                                  "     路径：\n" +
-                                  "网络\n" +
-                                  "     IP地址：\n" +
-                                  "     子网掩码：\n" +
-                                  "     网关地址：\n" +
-                                  "     首选DNS地址：\n" +
-                                  "应用程序\n" +
-                                  "     Office版本：\n" +
-                                  "     IE版本：\n" +
-                                  "主板\n" +
-                                  "     主板型号：\n" +
-                                  "     CPU型号：\n" +
-                                  "     CPU主频：\n";
-            sysInfoNameLabel.Text = sysInfoName;
+            //this.wbSchool.Url = new Uri("https://home.antonoil.com/informatization/FAQ/Forms/AllItems.aspx");
+            this.tabPageHelper.Parent = null;
+            this.tabPageSchool.Parent = null;
         }
 
         private void LoadActions()
@@ -120,6 +82,7 @@ namespace ITHelper
             }
 
             processBar.Visible = true;
+            processBar.Style = ProgressBarStyle.Blocks;
             startActionButton.Enabled = false;
             actionListBox.Enabled = false;
             eventListBox.Items.Clear();
@@ -138,6 +101,7 @@ namespace ITHelper
             startActionButton.Enabled = true;
             actionListBox.Enabled = true;
         }
+
         void Action_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             if (e.UserState != null)
@@ -197,69 +161,8 @@ namespace ITHelper
         {
             if (ApplicationDeployment.IsNetworkDeployed)
             {
-                ApplicationDeployment ad = ApplicationDeployment.CurrentDeployment;
-                UpdateCheckInfo info = null;
-                try
-                {
-                    info = ad.CheckForDetailedUpdate();
-
-                }
-                catch (DeploymentDownloadException dde)
-                {
-                    MessageBox.Show("不能下载新版本的应用。 \n\n请检查你的网络连接，或稍后再试。\n\n Error: " + dde.Message);
-                    return;
-                }
-                catch (InvalidDeploymentException ide)
-                {
-                    MessageBox.Show("不能检查更新，请联系信息化部门解决。\n\n Error: " + ide.Message);
-                    return;
-                }
-                catch (InvalidOperationException ioe)
-                {
-                    MessageBox.Show("本应用不是一个可更新程序，请重新安装。\n\n Error: " + ioe.Message);
-                    return;
-                }
-
-                if (info.UpdateAvailable)
-                {
-                    Boolean doUpdate = true;
-
-                    if (!info.IsUpdateRequired)
-                    {
-                        DialogResult dr = MessageBox.Show("有一个新版本可以使用，现在是否进行更新？", "有更新可用", MessageBoxButtons.OKCancel);
-                        if (!(DialogResult.OK == dr))
-                        {
-                            doUpdate = false;
-                        }
-                    }
-                    else
-                    {
-                        // Display a message that the app MUST reboot. Display the minimum required version.
-                        MessageBox.Show("发现新版本：" + info.MinimumRequiredVersion.ToString() +
-                            "。应用程序将自动更新。",
-                            "应用有更新", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                    }
-
-                    if (doUpdate)
-                    {
-                        try
-                        {
-                            ad.Update();
-                            MessageBox.Show("程序已经更新完毕，即将重启应用生效。");
-                            Application.Restart();
-                        }
-                        catch (DeploymentDownloadException dde)
-                        {
-                            MessageBox.Show("不能安装更新。 \n\n请检查你的网络连接，或稍后再试。\n\n Error: " + dde);
-                            return;
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("当前程序已是最新版本。");
-                }
+                Updating formUpdate = new Updating();
+                formUpdate.Show(this);
             }
             else
             {
@@ -269,6 +172,83 @@ namespace ITHelper
                     Process.Start("iexplore.exe","http://www.antontech.cn/publish/ITHelper/ITHelper.application");
                 }
             }
+        }
+
+        private void startScanButton_Click(object sender, EventArgs e)
+        {
+            startScanButton.Enabled = false;
+            processBar.Visible = true;
+            processBar.Style = ProgressBarStyle.Marquee;
+            BackgroundWorker bw = new BackgroundWorker();
+            bw.DoWork += (o, a) =>
+            {
+                CheckComputerInfo checkComputerInfo = new CheckComputerInfo();
+                String systemInfo = "计算机\r\n" +
+                        "     计算机名：\t\t\t" + checkComputerInfo.getHostName() + "\r\n" +
+                        "     计算机全名：\t\t\t" + checkComputerInfo.getHostFullName() + "\r\n" +
+                        "     域：\t\t\t\t" + checkComputerInfo.getDomainName() + "\r\n" +
+                        "     当前用户：\t\t\t" + checkComputerInfo.getOSCurrentUser() + "\r\n" +
+                        "操作系统\r\n" +
+                        "     名称：\t\t\t\t" + checkComputerInfo.getOSName() + "\r\n" +
+                        "     版本:\t\t\t\t" + checkComputerInfo.getOSVersion() + "\r\n" +
+                        "     位数：\t\t\t\t" + checkComputerInfo.getOSBit() + "\r\n" +
+                        "     路径：\t\t\t\t" + checkComputerInfo.getOSPath() + "\r\n" +
+                         "网络\r\n" +
+                        "     IP地址：\t\t\t" + checkComputerInfo.getOSIP() + "\r\n" +
+                        "     子网掩码：\t\t\t" + checkComputerInfo.getSubnet() + "\r\n" +
+                        "     网关地址：\t\t\t" + checkComputerInfo.getDefaultGateway() + "\r\n" +
+                         "     首选DNS地址：\t\t\t" + checkComputerInfo.getDNSAddress() + "\r\n" +
+                         "应用程序\r\n" +
+                        "     Office版本：\t\t\t" + checkComputerInfo.getOfficeVersion() + "\r\n" +
+                        "     IE版本：\t\t\t" + checkComputerInfo.getIEVersion() + "\r\n" +
+                        "主板\r\n" +
+                        "     主板型号：\t\t\t" + checkComputerInfo.getBaseBoardName() + "\r\n" +
+                        "     CPU型号：\t\t\t" + checkComputerInfo.getCPUName() + "\r\n" +
+                        "     CPU主频：\t\t\t" + checkComputerInfo.getCPUMHZ() + "\r\n";
+                a.Result = systemInfo;
+            };
+            bw.RunWorkerCompleted += (o, a) =>
+            {
+                systemInfoTxt.Text = a.Result as string;
+                processBar.Visible = false;
+                startScanButton.Enabled = true;
+            };
+            bw.RunWorkerAsync();
+        }
+
+        private void sysinfoButton_Click(object sender, EventArgs e)
+        {
+            const string cRegKeySysInfo = @"SOFTWARE\Microsoft\Shared Tools\MSINFO";
+            const string cRegValSysInfo = "PATH";
+            const string cRegKeySysInfoLoc = @"SOFTWARE\Microsoft\Shared Tools Location";
+            const string cRegValSysInfoLoc = "MSINFO";
+            try
+            {
+                string fileName;
+
+                //不同版本的windows系统，注册表存放的位置不同，共有两处
+
+                //第一处
+                RegistryKey getRegKey = Registry.LocalMachine;
+                RegistryKey getSubKey = getRegKey.OpenSubKey(cRegKeySysInfo);
+
+                if (getSubKey == null)
+                {
+                    //第二处
+                    getSubKey = getRegKey.OpenSubKey(cRegKeySysInfoLoc);
+                    fileName = getSubKey.GetValue(cRegValSysInfoLoc).ToString() + @"\MSINFO32.EXE";
+                }
+                else
+                {
+                    fileName = getSubKey.GetValue(cRegValSysInfo).ToString();
+                }
+
+                //调用外部可执行程序
+                Process newPro = new Process();
+                newPro.StartInfo.FileName = fileName;
+                newPro.Start();
+            }
+            catch { }
         }
 
 

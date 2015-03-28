@@ -7,7 +7,7 @@
     <ProjectGuid>{26ED2EA4-0238-4B98-B4C4-6EFAD3285D62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>cn.antontech.ITHelper.AutoActions</RootNamespace>
+    <RootNamespace>ITHelper.AutoActions</RootNamespace>
     <AssemblyName>AutoActions</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -38,7 +38,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -49,7 +48,6 @@
     <Compile Include="ActionGroup.cs" />
     <Compile Include="AddWebSiteAction.cs" />
     <Compile Include="BaseAction.cs" />
-    <Compile Include="CheckComputerInfo.cs" />
     <Compile Include="CompatibilityViewAction.cs" />
     <Compile Include="CopyFileAction.cs" />
     <Compile Include="IAction.cs" />
@@ -62,7 +60,6 @@
     <Compile Include="RootCaAction.cs" />
     <Compile Include="SecurityZoneAction.cs" />
     <Compile Include="ShowMessageAction.cs" />
-    <Compile Include="SystemInfoAction.cs" />
     <Compile Include="WindowsUpdateAction.cs" />
     <Compile Include="WinSockAction.cs" />
   </ItemGroup>
@@ -76,24 +73,6 @@
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>7</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Word">
-      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>8</VersionMajor>
-      <VersionMinor>6</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>

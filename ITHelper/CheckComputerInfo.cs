@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-//using System.Linq;
-using System.Text;
-//using System.Threading.Tasks;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
+using System;
 using System.Management;
 using System.Net;
 using System.Net.NetworkInformation;
-using System.Windows.Forms;
 
-namespace cn.antontech.ITHelper.AutoActions
+namespace ITHelper
 {
 
-    public class CheckComputerInfo
+    public class CheckComputerInfo : IDisposable
     {
         private RegistryKey registryKey;
         private RegistryKey registrySubKey;
         private IPHostEntry hostEntry;//主机记录
 
+        public void Dispose()
+        {
+        }
         public CheckComputerInfo()
         {
             registryKey = Registry.LocalMachine;
