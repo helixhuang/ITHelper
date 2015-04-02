@@ -88,4 +88,13 @@
     <AddWebSite Url="http://10.10.1.80:8000" SaveName="ERP" />
     <AddWebSite Url="http://bi.antonoil.com:8000" SaveName="PS" />
   </ActionGroup>
+  <ActionGroup Name="安装国内VPN">
+    <Install Name="国内VPN" Path="VPN\Domestic.exe" />
+  </ActionGroup>
+  <ActionGroup Name="安装海外VPN">
+    <Install Name="海外VPN" Path="VPN\Overseas.exe" />
+  </ActionGroup>
+  <ActionGroup Name="网神VPN插件修复">
+    
+  </ActionGroup>
 </Actions>
