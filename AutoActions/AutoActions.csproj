@@ -50,6 +50,7 @@
     <Compile Include="BaseAction.cs" />
     <Compile Include="CompatibilityViewAction.cs" />
     <Compile Include="CopyFileAction.cs" />
+    <Compile Include="GateWayVPNAction.cs" />
     <Compile Include="IAction.cs" />
     <Compile Include="IEHomeAction.cs" />
     <Compile Include="InstallAction.cs" />

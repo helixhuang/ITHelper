@@ -95,6 +95,10 @@
     <Install Name="海外VPN" Path="VPN\Overseas.exe" />
   </ActionGroup>
   <ActionGroup Name="网神VPN插件修复">
+    <GateWayVPN Name="gwservice" />
+    <GateWayVPN Name="gwupdater" />
+  </ActionGroup>
+  <ActionGroup Name="IE(64位）快捷方式删除">
     
   </ActionGroup>
 </Actions>

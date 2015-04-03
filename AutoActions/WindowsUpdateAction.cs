@@ -33,7 +33,7 @@ namespace cn.antontech.ITHelper.AutoActions
                 AutomaticUpdatesNotificationLevel value = (AutomaticUpdatesNotificationLevel)Enum.Parse(typeof(AutomaticUpdatesNotificationLevel), _config.Level);
                 auc.Settings.NotificationLevel = value;
                 auc.Settings.Save();
-                OnNotify(string.Format("设置更新级别 {0} 成功 ", _config.Level));
+                OnNotify(string.Format("设置更新级别 {0} 成功", _config.Level));
             }
         }
 
