@@ -1,4 +1,4 @@
-﻿namespace ITHelper
+﻿namespace cn.antontech.ITHelper
 {
     partial class AboutBox
     {

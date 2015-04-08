@@ -1,4 +1,4 @@
-﻿namespace ITHelper
+﻿namespace cn.antontech.ITHelper
 {
     partial class MainForm
     {
@@ -57,10 +57,10 @@
             this.startScanButton = new System.Windows.Forms.ToolStripButton();
             this.sysinfoButton = new System.Windows.Forms.ToolStripButton();
             this.splitContainerAction = new System.Windows.Forms.SplitContainer();
-            this.actionListBox = new ITHelper.ActionListBox();
+            this.actionListBox = new cn.antontech.ITHelper.ActionListBox();
             this.actionTab = new System.Windows.Forms.TabControl();
             this.actionTabPage = new System.Windows.Forms.TabPage();
-            this.eventListBox = new ITHelper.EventListBox();
+            this.eventListBox = new cn.antontech.ITHelper.EventListBox();
             this.toolStripAction = new System.Windows.Forms.ToolStrip();
             this.startActionButton = new System.Windows.Forms.ToolStripButton();
             this.wbSchool = new System.Windows.Forms.WebBrowser();
@@ -315,7 +315,7 @@
             // 
             // startScanButton
             // 
-            this.startScanButton.Image = global::ITHelper.Properties.Resources.resultset_next;
+            this.startScanButton.Image = global::cn.antontech.ITHelper.Properties.Resources.resultset_next;
             this.startScanButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.startScanButton.Name = "startScanButton";
             this.startScanButton.Size = new System.Drawing.Size(53, 22);
@@ -324,7 +324,7 @@
             // 
             // sysinfoButton
             // 
-            this.sysinfoButton.Image = global::ITHelper.Properties.Resources.monitor;
+            this.sysinfoButton.Image = global::cn.antontech.ITHelper.Properties.Resources.monitor;
             this.sysinfoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.sysinfoButton.Name = "sysinfoButton";
             this.sysinfoButton.Size = new System.Drawing.Size(79, 22);

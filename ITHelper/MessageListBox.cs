@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ITHelper
+namespace cn.antontech.ITHelper
 {
     /// <summary>
     /// 

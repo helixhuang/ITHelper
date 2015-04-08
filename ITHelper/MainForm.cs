@@ -11,7 +11,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace ITHelper
+namespace cn.antontech.ITHelper
 {
     public partial class MainForm : Form
     {
@@ -33,8 +33,8 @@ namespace ITHelper
             this.webLinks.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Links.html"); 
             this.webSoft.Url = new Uri("http://www.antontech.cn/publish/ITHelper/SoftCenter.html");
             //this.wbSchool.Url = new Uri("https://home.antonoil.com/informatization/FAQ/Forms/AllItems.aspx");
-            this.tabPageHelper.Parent = null;
             this.tabPageSchool.Parent = null;
+            this.tabPageHelper.Parent = null;
         }
 
         private void LoadActions()

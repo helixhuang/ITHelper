@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ITHelper
+namespace cn.antontech.ITHelper
 {
     /// <summary>
     /// This is our base class. It tries to mimick the behaviour of a standard ListBox. It's

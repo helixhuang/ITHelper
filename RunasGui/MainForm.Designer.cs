@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.runasObjectListBox = new RunasGui.RunasObjectListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -51,7 +50,7 @@
             this.btnSelectPath = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.splitContainer1.Panel1.SuspendLayout();
+            this.runasObjectListBox = new RunasGui.RunasObjectListBox();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -66,10 +65,6 @@
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
-            // splitContainer1.Panel1
-            // 
-            //this.splitContainer1.Panel1.Controls.Add(this.runasObjectListBox);
-            // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
@@ -77,22 +72,6 @@
             this.splitContainer1.SplitterDistance = 222;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // runasObjectListBox
-            // 
-            this.runasObjectListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.runasObjectListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.runasObjectListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.runasObjectListBox.FormattingEnabled = true;
-            this.runasObjectListBox.IntegralHeight = false;
-            this.runasObjectListBox.ItemHeight = 25;
-            this.runasObjectListBox.Location = new System.Drawing.Point(0, 0);
-            this.runasObjectListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.runasObjectListBox.Name = "runasObjectListBox";
-            this.runasObjectListBox.Size = new System.Drawing.Size(222, 439);
-            this.runasObjectListBox.TabIndex = 0;
-            this.runasObjectListBox.SelectedIndexChanged += new System.EventHandler(this.runasObjectListBox_SelectedIndexChanged);
-            this.runasObjectListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.runasObjectListBox_MouseDoubleClick);
             // 
             // tableLayoutPanel1
             // 
@@ -158,7 +137,7 @@
             // 
             this.btnCreate.AutoSize = true;
             this.btnCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCreate.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.Image")));
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreate.Location = new System.Drawing.Point(3, 4);
@@ -176,7 +155,7 @@
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSave.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.Location = new System.Drawing.Point(73, 4);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -193,7 +172,7 @@
             // 
             this.btnRun.AutoSize = true;
             this.btnRun.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnRun.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRun.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRun.Image = ((System.Drawing.Image)(resources.GetObject("btnRun.Image")));
             this.btnRun.Location = new System.Drawing.Point(213, 4);
             this.btnRun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -210,7 +189,7 @@
             // 
             this.btnDelete.AutoSize = true;
             this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.Location = new System.Drawing.Point(143, 4);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -227,7 +206,7 @@
             // 
             this.btnShortcut.AutoSize = true;
             this.btnShortcut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnShortcut.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnShortcut.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnShortcut.Image = ((System.Drawing.Image)(resources.GetObject("btnShortcut.Image")));
             this.btnShortcut.Location = new System.Drawing.Point(283, 4);
             this.btnShortcut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -245,7 +224,7 @@
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.AutoSize = true;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPassword.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtPassword.Location = new System.Drawing.Point(36, 296);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(12);
             this.txtPassword.Name = "txtPassword";
@@ -271,7 +250,7 @@
             this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUserName.AutoSize = true;
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtUserName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtUserName.Location = new System.Drawing.Point(24, 250);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(12);
             this.txtUserName.Name = "txtUserName";
@@ -296,7 +275,7 @@
             this.txtDomain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDomain.AutoSize = true;
-            this.txtDomain.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDomain.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDomain.Location = new System.Drawing.Point(48, 204);
             this.txtDomain.Margin = new System.Windows.Forms.Padding(12);
             this.txtDomain.Name = "txtDomain";
@@ -321,7 +300,7 @@
             this.txtArg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArg.AutoSize = true;
-            this.txtArg.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtArg.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtArg.Location = new System.Drawing.Point(12, 158);
             this.txtArg.Margin = new System.Windows.Forms.Padding(12);
             this.txtArg.Name = "txtArg";
@@ -346,7 +325,7 @@
             this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPath.AutoSize = true;
-            this.txtPath.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPath.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtPath.Location = new System.Drawing.Point(12, 107);
             this.txtPath.Margin = new System.Windows.Forms.Padding(12);
             this.txtPath.Name = "txtPath";
@@ -370,7 +349,7 @@
             // 
             this.btnSelectPath.AutoSize = true;
             this.btnSelectPath.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSelectPath.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnSelectPath.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnSelectPath.Location = new System.Drawing.Point(589, 107);
             this.btnSelectPath.Margin = new System.Windows.Forms.Padding(12);
             this.btnSelectPath.Name = "btnSelectPath";
@@ -385,7 +364,7 @@
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.AutoSize = true;
-            this.txtName.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtName.Location = new System.Drawing.Point(36, 61);
             this.txtName.Margin = new System.Windows.Forms.Padding(12);
             this.txtName.Name = "txtName";
@@ -405,13 +384,29 @@
             this.tbName.Size = new System.Drawing.Size(473, 22);
             this.tbName.TabIndex = 13;
             // 
+            // runasObjectListBox
+            // 
+            this.runasObjectListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.runasObjectListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.runasObjectListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.runasObjectListBox.FormattingEnabled = true;
+            this.runasObjectListBox.IntegralHeight = false;
+            this.runasObjectListBox.ItemHeight = 25;
+            this.runasObjectListBox.Location = new System.Drawing.Point(0, 0);
+            this.runasObjectListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.runasObjectListBox.Name = "runasObjectListBox";
+            this.runasObjectListBox.Size = new System.Drawing.Size(222, 439);
+            this.runasObjectListBox.TabIndex = 0;
+            this.runasObjectListBox.SelectedIndexChanged += new System.EventHandler(this.runasObjectListBox_SelectedIndexChanged);
+            this.runasObjectListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.runasObjectListBox_MouseDoubleClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 439);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -420,7 +415,6 @@
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Runas";
-            this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

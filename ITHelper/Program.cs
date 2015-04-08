@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Security.Principal;
 using System.Windows.Forms;
 
-namespace ITHelper
+namespace cn.antontech.ITHelper
 {
     static class Program
     {

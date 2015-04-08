@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITHelper
+namespace cn.antontech.ITHelper
 {
     /// <summary>
     /// 

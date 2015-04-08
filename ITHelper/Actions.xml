@@ -84,19 +84,21 @@
     <AddWebSite Url="https://home.antonoil.com" SaveName="协作共享平台" />
     <AddWebSite Url="https://vpn.antonoil.com" SaveName="VPN" />
     <AddWebSite Url="https://mail.antonoil.com" SaveName="网页邮件" />
-    <AddWebSite Url="https://oa.antonoil.com" SaveName="OA" />
+    <AddWebSite Url="http://oa.antonoil.com" SaveName="OA" />
     <AddWebSite Url="http://10.10.1.80:8000" SaveName="ERP" />
     <AddWebSite Url="http://bi.antonoil.com:8000" SaveName="PS" />
   </ActionGroup>
   <ActionGroup Name="安装国内VPN">
     <Install Name="国内VPN" Path="VPN\Domestic.exe" />
+    <OpenFile Name="国内VPN用户手册" Path="VPN\Domestic.docx" />
   </ActionGroup>
   <ActionGroup Name="安装海外VPN">
     <Install Name="海外VPN" Path="VPN\Overseas.exe" />
+    <OpenFile Name="海外VPN用户手册" Path="VPN\Overseas.docx" />
   </ActionGroup>
-  <ActionGroup Name="网神VPN插件修复">
-    <GateWayVPN Name="gwservice" />
-    <GateWayVPN Name="gwupdater" />
+  <ActionGroup Name="网神VPN插件修复" NeedAdmin="True">
+    <GateWay Name="gwservice" />
+    <GateWay Name="gwupdater" />
   </ActionGroup>
   <ActionGroup Name="IE(64位）快捷方式删除">
     

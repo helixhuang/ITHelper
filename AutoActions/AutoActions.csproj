@@ -7,7 +7,7 @@
     <ProjectGuid>{26ED2EA4-0238-4B98-B4C4-6EFAD3285D62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ITHelper.AutoActions</RootNamespace>
+    <RootNamespace>cn.antontech.ITHelper.AutoActions</RootNamespace>
     <AssemblyName>AutoActions</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -50,10 +50,11 @@
     <Compile Include="BaseAction.cs" />
     <Compile Include="CompatibilityViewAction.cs" />
     <Compile Include="CopyFileAction.cs" />
-    <Compile Include="GateWayVPNAction.cs" />
+    <Compile Include="GateWayAction.cs" />
     <Compile Include="IAction.cs" />
     <Compile Include="IEHomeAction.cs" />
     <Compile Include="InstallAction.cs" />
+    <Compile Include="OpenFileAction.cs" />
     <Compile Include="OpenIEAction.cs" />
     <Compile Include="PopupBlockerAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

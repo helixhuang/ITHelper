@@ -6,38 +6,38 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace ITHelper.AutoActions
+namespace cn.antontech.ITHelper.AutoActions
 {
-    public class GateWayVPNAction : BaseAction
+    public class GateWayAction : BaseAction
     {
         private Config _config;
-        public GateWayVPNAction(XmlElement config)
-            :this(new Config(config))
+        public GateWayAction(XmlElement config)
+            : this(new Config(config))
         {
         }
 
-        public GateWayVPNAction(Config config)
+        public GateWayAction(Config config)
         {
             _config = config;
         }
 
         public override void Exec()
         {
-            string path = string.Format(@"System\CurrentControlSet\Services\{0}", _config.Name);
-            if (Directory.Exists(path))
+            OnNotify(string.Format("设置 {0} 服务自动启动", _config.Name));
+            using (RegistryKey serviceKey = 
+                Registry.LocalMachine.OpenSubKey(string.Format(@"System\CurrentControlSet\Services\{0}", _config.Name), true))
             {
-                OnNotify(string.Format("设置 {0} 服务自动启动", _config.Name));
-                using (RegistryKey serviceKey = Registry.LocalMachine.OpenSubKey(path, true))
+                if (serviceKey == null)
+                {
+                    OnNotify(string.Format("{0}服务不存在", _config.Name));
+                }
+                else
                 {
                     serviceKey.SetValue("Start", 2);
                     if (Environment.OSVersion.Version.Major >= 6)
                         serviceKey.SetValue("DelayedAutostart", 0, RegistryValueKind.DWord);
+                    OnNotify("设置成功！");
                 }
-                OnNotify("设置成功");
-            }
-            else
-            {
-                OnNotify(string.Format("路径不正确，未能找到{0}服务", _config.Name));
             }
         }
 
@@ -47,7 +47,7 @@ namespace ITHelper.AutoActions
             {
             }
             public Config(XmlElement config)
-                :this()
+                : this()
             {
                 string name = config.Attributes["Name"].Value;
                 Name = name;

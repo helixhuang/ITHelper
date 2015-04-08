@@ -7,7 +7,7 @@
     <ProjectGuid>{D3E944A7-7F0B-40AF-9DE7-DCF673CF9214}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ITHelper</RootNamespace>
+    <RootNamespace>cn.antontech.ITHelper</RootNamespace>
     <AssemblyName>ITHelper</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -193,6 +193,12 @@
     <Content Include="RootCa\rootca.cer">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="VPN\Domestic.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="VPN\Overseas.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
