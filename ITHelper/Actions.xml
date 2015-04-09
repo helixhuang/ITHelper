@@ -100,7 +100,7 @@
     <GateWay Name="gwservice" />
     <GateWay Name="gwupdater" />
   </ActionGroup>
-  <ActionGroup Name="IE(64位）快捷方式删除">
-    
+  <ActionGroup Name="移除IE(64位）快捷方式">
+    <RemoveLnk Str="Internet Explorer" Num="64" />
   </ActionGroup>
 </Actions>

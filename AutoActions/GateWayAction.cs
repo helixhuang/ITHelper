@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.ServiceProcess;
 using System.Text;
 using System.Xml;
 
@@ -29,14 +30,22 @@ namespace cn.antontech.ITHelper.AutoActions
             {
                 if (serviceKey == null)
                 {
-                    OnNotify(string.Format("{0}服务不存在", _config.Name));
+                    OnNotify(string.Format("{0} 服务不存在", _config.Name));
                 }
                 else
                 {
+                    ServiceController sc = new ServiceController(_config.Name);
+                    if ((sc.Status.Equals(ServiceControllerStatus.Stopped)) ||
+                        (sc.Status.Equals(ServiceControllerStatus.StopPending)))
+                    {
+                        sc.Start();
+                        sc.Refresh();
+                        OnNotify(string.Format("{0} 服务已启动", _config.Name));
+                    }
                     serviceKey.SetValue("Start", 2);
                     if (Environment.OSVersion.Version.Major >= 6)
                         serviceKey.SetValue("DelayedAutostart", 0, RegistryValueKind.DWord);
-                    OnNotify("设置成功！");
+                    OnNotify("自动启动设置成功！");
                 }
             }
         }
