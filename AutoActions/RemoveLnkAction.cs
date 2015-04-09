@@ -25,8 +25,7 @@ namespace cn.antontech.ITHelper.AutoActions
             string path = string.Format("C:/Users/{0}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/", userName);
             if (Directory.Exists(path))
             {
-                DirectoryInfo dir =
-                    new DirectoryInfo(path);
+                DirectoryInfo dir = new DirectoryInfo(path);
                 FileInfo[] fileList = dir.GetFiles();
                 for (int i = 0; i < fileList.Length; i++)
                 {

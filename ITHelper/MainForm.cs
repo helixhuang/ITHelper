@@ -33,7 +33,8 @@ namespace cn.antontech.ITHelper
             this.webLinks.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Links.html"); 
             this.webSoft.Url = new Uri("http://www.antontech.cn/publish/ITHelper/SoftCenter.html");
             //this.wbSchool.Url = new Uri("https://home.antonoil.com/informatization/FAQ/Forms/AllItems.aspx");
-            this.tabPageSchool.Parent = null;
+            this.webSchool.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Manual.html");
+            //this.tabPageSchool.Parent = null;
             this.tabPageHelper.Parent = null;
         }
 
