@@ -18,6 +18,7 @@ namespace cn.antontech.ITHelper
         public MainForm()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             actionTab.Visible = false;
             processBar.Visible = false;
             if (RunAsHelper.IsRunAsAdmin())
@@ -30,12 +31,13 @@ namespace cn.antontech.ITHelper
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadActions();
-            this.webLinks.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Links.html"); 
-            this.webSoft.Url = new Uri("http://www.antontech.cn/publish/ITHelper/SoftCenter.html");
+            this.webLinks.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Links.html");
+            this.webSoft.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Soft.html");
             //this.wbSchool.Url = new Uri("https://home.antonoil.com/informatization/FAQ/Forms/AllItems.aspx");
             this.webSchool.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Manual.html");
+            this.webHelper.Url = new Uri("http://www.antontech.cn/publish/ITHelper/ITService.html");
             //this.tabPageSchool.Parent = null;
-            this.tabPageHelper.Parent = null;
+            //this.tabPageHelper.Parent = null;
         }
 
         private void LoadActions()
@@ -251,8 +253,5 @@ namespace cn.antontech.ITHelper
             }
             catch { }
         }
-
-
-
     }
 }

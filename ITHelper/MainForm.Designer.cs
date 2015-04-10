@@ -46,10 +46,8 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageFix = new System.Windows.Forms.TabPage();
             this.splitContainerAction = new System.Windows.Forms.SplitContainer();
-            this.actionListBox = new cn.antontech.ITHelper.ActionListBox();
             this.actionTab = new System.Windows.Forms.TabControl();
             this.actionTabPage = new System.Windows.Forms.TabPage();
-            this.eventListBox = new cn.antontech.ITHelper.EventListBox();
             this.toolStripAction = new System.Windows.Forms.ToolStrip();
             this.startActionButton = new System.Windows.Forms.ToolStripButton();
             this.tabPageScan = new System.Windows.Forms.TabPage();
@@ -65,6 +63,9 @@
             this.wbSchool = new System.Windows.Forms.WebBrowser();
             this.tabPageHelper = new System.Windows.Forms.TabPage();
             this.webSchool = new System.Windows.Forms.WebBrowser();
+            this.webHelper = new System.Windows.Forms.WebBrowser();
+            this.actionListBox = new cn.antontech.ITHelper.ActionListBox();
+            this.eventListBox = new cn.antontech.ITHelper.EventListBox();
             this.menuTop.SuspendLayout();
             this.statusBottom.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -80,6 +81,7 @@
             this.tabPageSoftware.SuspendLayout();
             this.tabPageLinks.SuspendLayout();
             this.tabPageSchool.SuspendLayout();
+            this.tabPageHelper.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuTop
@@ -234,20 +236,6 @@
             this.splitContainerAction.SplitterWidth = 5;
             this.splitContainerAction.TabIndex = 5;
             // 
-            // actionListBox
-            // 
-            this.actionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.actionListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.actionListBox.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.actionListBox.FormattingEnabled = true;
-            this.actionListBox.IntegralHeight = false;
-            this.actionListBox.ItemHeight = 25;
-            this.actionListBox.Location = new System.Drawing.Point(0, 0);
-            this.actionListBox.Name = "actionListBox";
-            this.actionListBox.Size = new System.Drawing.Size(173, 277);
-            this.actionListBox.TabIndex = 0;
-            this.actionListBox.SelectedIndexChanged += new System.EventHandler(this.actionListBox_SelectedIndexChanged);
-            // 
             // actionTab
             // 
             this.actionTab.Controls.Add(this.actionTabPage);
@@ -274,18 +262,6 @@
             this.actionTabPage.TabIndex = 1;
             this.actionTabPage.Text = "tabPage2";
             this.actionTabPage.UseVisualStyleBackColor = true;
-            // 
-            // eventListBox
-            // 
-            this.eventListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.eventListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.eventListBox.FormattingEnabled = true;
-            this.eventListBox.IntegralHeight = false;
-            this.eventListBox.ItemHeight = 25;
-            this.eventListBox.Location = new System.Drawing.Point(3, 31);
-            this.eventListBox.Name = "eventListBox";
-            this.eventListBox.Size = new System.Drawing.Size(517, 210);
-            this.eventListBox.TabIndex = 1;
             // 
             // toolStripAction
             // 
@@ -315,7 +291,7 @@
             this.tabPageScan.Location = new System.Drawing.Point(4, 25);
             this.tabPageScan.Name = "tabPageScan";
             this.tabPageScan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageScan.Size = new System.Drawing.Size(715, 284);
+            this.tabPageScan.Size = new System.Drawing.Size(715, 283);
             this.tabPageScan.TabIndex = 1;
             this.tabPageScan.Text = "系统检测";
             this.tabPageScan.UseVisualStyleBackColor = true;
@@ -327,7 +303,7 @@
             this.systemInfoTxt.Multiline = true;
             this.systemInfoTxt.Name = "systemInfoTxt";
             this.systemInfoTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.systemInfoTxt.Size = new System.Drawing.Size(709, 253);
+            this.systemInfoTxt.Size = new System.Drawing.Size(709, 252);
             this.systemInfoTxt.TabIndex = 4;
             // 
             // toolStrip1
@@ -366,7 +342,7 @@
             this.tabPageSoftware.Location = new System.Drawing.Point(4, 25);
             this.tabPageSoftware.Name = "tabPageSoftware";
             this.tabPageSoftware.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSoftware.Size = new System.Drawing.Size(715, 284);
+            this.tabPageSoftware.Size = new System.Drawing.Size(715, 283);
             this.tabPageSoftware.TabIndex = 2;
             this.tabPageSoftware.Text = "软件百宝箱";
             this.tabPageSoftware.UseVisualStyleBackColor = true;
@@ -378,7 +354,7 @@
             this.webSoft.MinimumSize = new System.Drawing.Size(20, 20);
             this.webSoft.Name = "webSoft";
             this.webSoft.ScriptErrorsSuppressed = true;
-            this.webSoft.Size = new System.Drawing.Size(709, 278);
+            this.webSoft.Size = new System.Drawing.Size(709, 277);
             this.webSoft.TabIndex = 0;
             // 
             // tabPageLinks
@@ -387,7 +363,7 @@
             this.tabPageLinks.ImageIndex = 1;
             this.tabPageLinks.Location = new System.Drawing.Point(4, 25);
             this.tabPageLinks.Name = "tabPageLinks";
-            this.tabPageLinks.Size = new System.Drawing.Size(715, 284);
+            this.tabPageLinks.Size = new System.Drawing.Size(715, 283);
             this.tabPageLinks.TabIndex = 3;
             this.tabPageLinks.Text = "公司网址";
             this.tabPageLinks.UseVisualStyleBackColor = true;
@@ -399,7 +375,7 @@
             this.webLinks.MinimumSize = new System.Drawing.Size(20, 20);
             this.webLinks.Name = "webLinks";
             this.webLinks.ScriptErrorsSuppressed = true;
-            this.webLinks.Size = new System.Drawing.Size(715, 284);
+            this.webLinks.Size = new System.Drawing.Size(715, 285);
             this.webLinks.TabIndex = 0;
             // 
             // tabPageSchool
@@ -420,18 +396,19 @@
             this.wbSchool.Location = new System.Drawing.Point(0, 0);
             this.wbSchool.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbSchool.Name = "wbSchool";
-            this.wbSchool.Size = new System.Drawing.Size(715, 283);
+            this.wbSchool.Size = new System.Drawing.Size(715, 285);
             this.wbSchool.TabIndex = 0;
             // 
             // tabPageHelper
             // 
+            this.tabPageHelper.Controls.Add(this.webHelper);
             this.tabPageHelper.ImageIndex = 5;
             this.tabPageHelper.Location = new System.Drawing.Point(4, 25);
             this.tabPageHelper.Name = "tabPageHelper";
             this.tabPageHelper.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHelper.Size = new System.Drawing.Size(715, 284);
+            this.tabPageHelper.Size = new System.Drawing.Size(715, 283);
             this.tabPageHelper.TabIndex = 5;
-            this.tabPageHelper.Text = "IT服务地图";
+            this.tabPageHelper.Text = "IT服务台";
             this.tabPageHelper.UseVisualStyleBackColor = true;
             // 
             // webSchool
@@ -440,8 +417,43 @@
             this.webSchool.Location = new System.Drawing.Point(0, 0);
             this.webSchool.MinimumSize = new System.Drawing.Size(20, 20);
             this.webSchool.Name = "webSchool";
-            this.webSchool.Size = new System.Drawing.Size(715, 283);
+            this.webSchool.Size = new System.Drawing.Size(715, 285);
             this.webSchool.TabIndex = 1;
+            // 
+            // webHelper
+            // 
+            this.webHelper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webHelper.Location = new System.Drawing.Point(3, 3);
+            this.webHelper.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webHelper.Name = "webHelper";
+            this.webHelper.Size = new System.Drawing.Size(709, 279);
+            this.webHelper.TabIndex = 0;
+            // 
+            // actionListBox
+            // 
+            this.actionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actionListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.actionListBox.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.actionListBox.FormattingEnabled = true;
+            this.actionListBox.IntegralHeight = false;
+            this.actionListBox.ItemHeight = 25;
+            this.actionListBox.Location = new System.Drawing.Point(0, 0);
+            this.actionListBox.Name = "actionListBox";
+            this.actionListBox.Size = new System.Drawing.Size(173, 277);
+            this.actionListBox.TabIndex = 0;
+            this.actionListBox.SelectedIndexChanged += new System.EventHandler(this.actionListBox_SelectedIndexChanged);
+            // 
+            // eventListBox
+            // 
+            this.eventListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eventListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.eventListBox.FormattingEnabled = true;
+            this.eventListBox.IntegralHeight = false;
+            this.eventListBox.ItemHeight = 25;
+            this.eventListBox.Location = new System.Drawing.Point(3, 31);
+            this.eventListBox.Name = "eventListBox";
+            this.eventListBox.Size = new System.Drawing.Size(517, 210);
+            this.eventListBox.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -479,6 +491,7 @@
             this.tabPageSoftware.ResumeLayout(false);
             this.tabPageLinks.ResumeLayout(false);
             this.tabPageSchool.ResumeLayout(false);
+            this.tabPageHelper.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,6 +534,7 @@
         private System.Windows.Forms.ToolStripButton sysinfoButton;
         private System.Windows.Forms.WebBrowser wbSchool;
         private System.Windows.Forms.WebBrowser webSchool;
+        private System.Windows.Forms.WebBrowser webHelper;
     }
 }
 
