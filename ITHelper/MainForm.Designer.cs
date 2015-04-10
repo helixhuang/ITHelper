@@ -46,8 +46,10 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageFix = new System.Windows.Forms.TabPage();
             this.splitContainerAction = new System.Windows.Forms.SplitContainer();
+            this.actionListBox = new cn.antontech.ITHelper.ActionListBox();
             this.actionTab = new System.Windows.Forms.TabControl();
             this.actionTabPage = new System.Windows.Forms.TabPage();
+            this.eventListBox = new cn.antontech.ITHelper.EventListBox();
             this.toolStripAction = new System.Windows.Forms.ToolStrip();
             this.startActionButton = new System.Windows.Forms.ToolStripButton();
             this.tabPageScan = new System.Windows.Forms.TabPage();
@@ -60,12 +62,10 @@
             this.tabPageLinks = new System.Windows.Forms.TabPage();
             this.webLinks = new System.Windows.Forms.WebBrowser();
             this.tabPageSchool = new System.Windows.Forms.TabPage();
+            this.webSchool = new System.Windows.Forms.WebBrowser();
             this.wbSchool = new System.Windows.Forms.WebBrowser();
             this.tabPageHelper = new System.Windows.Forms.TabPage();
-            this.webSchool = new System.Windows.Forms.WebBrowser();
             this.webHelper = new System.Windows.Forms.WebBrowser();
-            this.actionListBox = new cn.antontech.ITHelper.ActionListBox();
-            this.eventListBox = new cn.antontech.ITHelper.EventListBox();
             this.menuTop.SuspendLayout();
             this.statusBottom.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -236,6 +236,20 @@
             this.splitContainerAction.SplitterWidth = 5;
             this.splitContainerAction.TabIndex = 5;
             // 
+            // actionListBox
+            // 
+            this.actionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actionListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.actionListBox.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.actionListBox.FormattingEnabled = true;
+            this.actionListBox.IntegralHeight = false;
+            this.actionListBox.ItemHeight = 25;
+            this.actionListBox.Location = new System.Drawing.Point(0, 0);
+            this.actionListBox.Name = "actionListBox";
+            this.actionListBox.Size = new System.Drawing.Size(173, 277);
+            this.actionListBox.TabIndex = 0;
+            this.actionListBox.SelectedIndexChanged += new System.EventHandler(this.actionListBox_SelectedIndexChanged);
+            // 
             // actionTab
             // 
             this.actionTab.Controls.Add(this.actionTabPage);
@@ -262,6 +276,18 @@
             this.actionTabPage.TabIndex = 1;
             this.actionTabPage.Text = "tabPage2";
             this.actionTabPage.UseVisualStyleBackColor = true;
+            // 
+            // eventListBox
+            // 
+            this.eventListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.eventListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.eventListBox.FormattingEnabled = true;
+            this.eventListBox.IntegralHeight = false;
+            this.eventListBox.ItemHeight = 25;
+            this.eventListBox.Location = new System.Drawing.Point(3, 31);
+            this.eventListBox.Name = "eventListBox";
+            this.eventListBox.Size = new System.Drawing.Size(517, 210);
+            this.eventListBox.TabIndex = 1;
             // 
             // toolStripAction
             // 
@@ -341,7 +367,6 @@
             this.tabPageSoftware.ImageIndex = 2;
             this.tabPageSoftware.Location = new System.Drawing.Point(4, 25);
             this.tabPageSoftware.Name = "tabPageSoftware";
-            this.tabPageSoftware.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageSoftware.Size = new System.Drawing.Size(715, 283);
             this.tabPageSoftware.TabIndex = 2;
             this.tabPageSoftware.Text = "软件百宝箱";
@@ -350,11 +375,10 @@
             // webSoft
             // 
             this.webSoft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webSoft.Location = new System.Drawing.Point(3, 3);
+            this.webSoft.Location = new System.Drawing.Point(0, 0);
             this.webSoft.MinimumSize = new System.Drawing.Size(20, 20);
             this.webSoft.Name = "webSoft";
-            this.webSoft.ScriptErrorsSuppressed = true;
-            this.webSoft.Size = new System.Drawing.Size(709, 277);
+            this.webSoft.Size = new System.Drawing.Size(715, 283);
             this.webSoft.TabIndex = 0;
             // 
             // tabPageLinks
@@ -374,8 +398,7 @@
             this.webLinks.Location = new System.Drawing.Point(0, 0);
             this.webLinks.MinimumSize = new System.Drawing.Size(20, 20);
             this.webLinks.Name = "webLinks";
-            this.webLinks.ScriptErrorsSuppressed = true;
-            this.webLinks.Size = new System.Drawing.Size(715, 285);
+            this.webLinks.Size = new System.Drawing.Size(715, 283);
             this.webLinks.TabIndex = 0;
             // 
             // tabPageSchool
@@ -390,13 +413,22 @@
             this.tabPageSchool.Text = "信息化学苑";
             this.tabPageSchool.UseVisualStyleBackColor = true;
             // 
+            // webSchool
+            // 
+            this.webSchool.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webSchool.Location = new System.Drawing.Point(0, 0);
+            this.webSchool.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webSchool.Name = "webSchool";
+            this.webSchool.Size = new System.Drawing.Size(715, 283);
+            this.webSchool.TabIndex = 1;
+            // 
             // wbSchool
             // 
             this.wbSchool.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wbSchool.Location = new System.Drawing.Point(0, 0);
             this.wbSchool.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbSchool.Name = "wbSchool";
-            this.wbSchool.Size = new System.Drawing.Size(715, 285);
+            this.wbSchool.Size = new System.Drawing.Size(715, 283);
             this.wbSchool.TabIndex = 0;
             // 
             // tabPageHelper
@@ -405,55 +437,20 @@
             this.tabPageHelper.ImageIndex = 5;
             this.tabPageHelper.Location = new System.Drawing.Point(4, 25);
             this.tabPageHelper.Name = "tabPageHelper";
-            this.tabPageHelper.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageHelper.Size = new System.Drawing.Size(715, 283);
             this.tabPageHelper.TabIndex = 5;
             this.tabPageHelper.Text = "IT服务台";
             this.tabPageHelper.UseVisualStyleBackColor = true;
             // 
-            // webSchool
-            // 
-            this.webSchool.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webSchool.Location = new System.Drawing.Point(0, 0);
-            this.webSchool.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webSchool.Name = "webSchool";
-            this.webSchool.Size = new System.Drawing.Size(715, 285);
-            this.webSchool.TabIndex = 1;
-            // 
             // webHelper
             // 
             this.webHelper.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webHelper.Location = new System.Drawing.Point(3, 3);
+            this.webHelper.Location = new System.Drawing.Point(0, 0);
+            this.webHelper.Margin = new System.Windows.Forms.Padding(0);
             this.webHelper.MinimumSize = new System.Drawing.Size(20, 20);
             this.webHelper.Name = "webHelper";
-            this.webHelper.Size = new System.Drawing.Size(709, 279);
+            this.webHelper.Size = new System.Drawing.Size(715, 283);
             this.webHelper.TabIndex = 0;
-            // 
-            // actionListBox
-            // 
-            this.actionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.actionListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.actionListBox.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.actionListBox.FormattingEnabled = true;
-            this.actionListBox.IntegralHeight = false;
-            this.actionListBox.ItemHeight = 25;
-            this.actionListBox.Location = new System.Drawing.Point(0, 0);
-            this.actionListBox.Name = "actionListBox";
-            this.actionListBox.Size = new System.Drawing.Size(173, 277);
-            this.actionListBox.TabIndex = 0;
-            this.actionListBox.SelectedIndexChanged += new System.EventHandler(this.actionListBox_SelectedIndexChanged);
-            // 
-            // eventListBox
-            // 
-            this.eventListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.eventListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.eventListBox.FormattingEnabled = true;
-            this.eventListBox.IntegralHeight = false;
-            this.eventListBox.ItemHeight = 25;
-            this.eventListBox.Location = new System.Drawing.Point(3, 31);
-            this.eventListBox.Name = "eventListBox";
-            this.eventListBox.Size = new System.Drawing.Size(517, 210);
-            this.eventListBox.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -526,8 +523,6 @@
         private System.Windows.Forms.ToolStripMenuItem runAsAdminToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.WebBrowser webSoft;
-        private System.Windows.Forms.WebBrowser webLinks;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton startScanButton;
         private System.Windows.Forms.TextBox systemInfoTxt;
@@ -535,6 +530,8 @@
         private System.Windows.Forms.WebBrowser wbSchool;
         private System.Windows.Forms.WebBrowser webSchool;
         private System.Windows.Forms.WebBrowser webHelper;
+        private System.Windows.Forms.WebBrowser webSoft;
+        private System.Windows.Forms.WebBrowser webLinks;
     }
 }
 

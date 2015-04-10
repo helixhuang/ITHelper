@@ -34,14 +34,15 @@ namespace cn.antontech.ITHelper.AutoActions
                         if (fileList[i].Name.Contains(_config.Num))
                         {
                             fileList[i].Delete();
-                            OnNotify(string.Format("{0} 64位快捷方式已删除", _config.Str));
+                            OnNotify(string.Format("{0} 8 64位快捷方式已删除", _config.Str));
                         }
                     }
                 }
+                OnNotify(string.Format("未能找到 {0} 8 64位快捷方式", _config.Str));
             }
             else
             {
-                OnNotify(string.Format("未能找到 {0} 64位快捷方式",_config.Str));
+                OnNotify(string.Format("未能找到 {0} 8 64位快捷方式",_config.Str));
             }
         }
 
