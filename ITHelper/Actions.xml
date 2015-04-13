@@ -35,7 +35,18 @@
     <OpenIE Url="http://oa.antonoil.com" />
   </ActionGroup>
   -->
-  <ActionGroup Name="新机器安装默认设置" NeedAdmin="True">
+  <ActionGroup Name="新机器安装一键设置" NeedAdmin="True" Instruction="集成功能有：CA证书导入、禁止windows更新、删除IE（64位）快捷方式、安装公司PPT模板、添加公司常用平台网址到浏览器收藏夹、浏览器设置、海外和国内VPN安装">
+    <RootCa Name="rootca证书" Path="RootCa\rootca.cer" />
+    <WindowsUpdate Level="aunlDisabled" />
+    <RemoveLnk Str="Internet Explorer" Num="64" />
+    <CopyFile OS="ALL" From="PPT\安东新版-宽屏.thmx" To="%ApplicationData%\Microsoft\Templates\Document Themes\安东新版-宽屏.thmx"/>
+    <CopyFile OS="ALL" From="PPT\安东新版-普通.thmx" To="%ApplicationData%\Microsoft\Templates\Document Themes\安东新版-普通.thmx"/>
+    <AddWebSite Url="https://home.antonoil.com" SaveName="协作共享平台" />
+    <AddWebSite Url="https://vpn.antonoil.com" SaveName="VPN" />
+    <AddWebSite Url="https://mail.antonoil.com" SaveName="网页邮件" />
+    <AddWebSite Url="http://oa.antonoil.com" SaveName="OA" />
+    <AddWebSite Url="http://10.10.1.80:8000" SaveName="ERP" />
+    <AddWebSite Url="http://bi.antonoil.com:8000" SaveName="PS" />
     <CompatibilityView Domain="192.168.100.245" />
     <CompatibilityView Domain="192.168.100.250" />
     <CompatibilityView Domain="219.238.8.102" />
@@ -53,8 +64,12 @@
     <CopyFile OS="x86" From="OA\OA-32.lnk" To="%DesktopDirectory%\OA.lnk"/>
     <CopyFile OS="x64" From="OA\OA-64.lnk" To="%DesktopDirectory%\OA.lnk"/>
     <IEHome Url="http://www.antonoil.com" />
+    <Install Name="国内VPN" Path="VPN\Domestic.exe" />
+    <Install Name="海外VPN" Path="VPN\Overseas.exe" />
+    <OpenFile Name="国内VPN用户手册" Path="VPN\Domestic.docx" />
+    <OpenFile Name="海外VPN用户手册" Path="VPN\Overseas.docx" />
   </ActionGroup>
-  <ActionGroup Name="解决IE11下的OA问题" NeedAdmin="True">
+  <ActionGroup Name="解决IE11下的OA问题" NeedAdmin="True" Instruction="解决使用IE11访问OA时页面不完整问题">
     <SecurityZone Domain="oa.antonoil.com"/>
     <SecurityZone Domain="192.168.100.245"/>
     <Install Name="E-cology控件" Path="OA\Ecologyplugin.exe"/>
@@ -67,40 +82,7 @@
     <ShowMessage Message="处理完毕\n并在桌面上创建了OA的快捷方式\n点击确定打开OA进行测试"/>
     <OpenIE Url="http://oa.antonoil.com" />
   </ActionGroup>
-  <ActionGroup Name="安装公司PPT模版">
-    <CopyFile OS="ALL" From="PPT\安东新版-宽屏.thmx" To="%ApplicationData%\Microsoft\Templates\Document Themes\安东新版-宽屏.thmx"/>
-    <CopyFile OS="ALL" From="PPT\安东新版-普通.thmx" To="%ApplicationData%\Microsoft\Templates\Document Themes\安东新版-普通.thmx"/>
-  </ActionGroup>
-  <ActionGroup Name="导入CA证书" NeedAdmin="True">
-    <RootCa Name="rootca证书" Path="RootCa\rootca.cer" />
-  </ActionGroup>
-  <ActionGroup Name="禁止Windows更新" NeedAdmin="True">
-    <WindowsUpdate Level="aunlDisabled" />
-  </ActionGroup>
-  <ActionGroup Name="修复WinSock协议" NeedAdmin="True">
-    <WinSock FileName="cmd.exe" Arguments="/c netsh winsock reset" />
-  </ActionGroup>
-  <ActionGroup Name="添加常用网址到收藏夹">
-    <AddWebSite Url="https://home.antonoil.com" SaveName="协作共享平台" />
-    <AddWebSite Url="https://vpn.antonoil.com" SaveName="VPN" />
-    <AddWebSite Url="https://mail.antonoil.com" SaveName="网页邮件" />
-    <AddWebSite Url="http://oa.antonoil.com" SaveName="OA" />
-    <AddWebSite Url="http://10.10.1.80:8000" SaveName="ERP" />
-    <AddWebSite Url="http://bi.antonoil.com:8000" SaveName="PS" />
-  </ActionGroup>
-  <ActionGroup Name="安装国内VPN">
-    <Install Name="国内VPN" Path="VPN\Domestic.exe" />
-    <OpenFile Name="国内VPN用户手册" Path="VPN\Domestic.docx" />
-  </ActionGroup>
-  <ActionGroup Name="安装海外VPN">
-    <Install Name="海外VPN" Path="VPN\Overseas.exe" />
-    <OpenFile Name="海外VPN用户手册" Path="VPN\Overseas.docx" />
-  </ActionGroup>
-  <ActionGroup Name="网神VPN插件修复" NeedAdmin="True">
-    <GateWay Name="gwservice" />
-    <GateWay Name="gwupdater" />
-  </ActionGroup>
-  <ActionGroup Name="移除IE(64位）快捷方式">
-    <RemoveLnk Str="Internet Explorer" Num="64" />
+  <ActionGroup Name="禁止office图形加速" Instruction="">
+    
   </ActionGroup>
 </Actions>

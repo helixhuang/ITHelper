@@ -58,6 +58,7 @@ namespace cn.antontech.ITHelper
             {
                 actionTab.Visible = true;
                 actionTabPage.Text = actionGroup.Name;
+                tabInstruction.Text = actionGroup.Instruction;
             }
             else
             {

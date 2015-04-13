@@ -23,12 +23,13 @@ namespace cn.antontech.ITHelper.AutoActions
         {
             if(!File.Exists(_config.Path))
             {
-                OnNotify(string.Format("打开{0}错误",_config.Name));
+                OnNotify(string.Format("{0} 不存在！",_config.Name));
             }
             else
             {
                 OnNotify(string.Format("正在打开用户手册..."));
                 System.Diagnostics.Process.Start(_config.Path);
+                OnNotify(string.Format("成功打开 {0}", _config.Name));
             }
         }
 
