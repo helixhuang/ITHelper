@@ -37,7 +37,8 @@ namespace cn.antontech.ITHelper
             this.webSchool.Url = new Uri("http://www.antontech.cn/publish/ITHelper/Manual.html");
             this.webHelper.Url = new Uri("http://www.antontech.cn/publish/ITHelper/ITService.html");
             //this.tabPageSchool.Parent = null;
-            //this.tabPageHelper.Parent = null;
+            RemindBox reminBox = new RemindBox();
+            reminBox.Show();
         }
 
         private void LoadActions()

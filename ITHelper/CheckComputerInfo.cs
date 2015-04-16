@@ -209,11 +209,10 @@ namespace cn.antontech.ITHelper
                         break;
                 }
                 return sVersion;
-
             }
             catch
             {
-                return "No office";
+                return "No Office";
             }
         }
 

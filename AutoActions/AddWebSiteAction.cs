@@ -48,7 +48,7 @@ namespace cn.antontech.ITHelper.AutoActions
                 {
                     throw ex;
                 }
-                OnNotify(string.Format("添加 {0} 成功 ", _config.SaveName));
+                OnNotify(string.Format("添加 {0} 到IE浏览器收藏夹成功 ", _config.SaveName));
             }
         }
 

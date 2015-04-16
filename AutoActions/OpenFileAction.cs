@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml;
+using System.Windows.Forms;
 
 namespace cn.antontech.ITHelper.AutoActions
 {
@@ -10,7 +11,7 @@ namespace cn.antontech.ITHelper.AutoActions
     {
         private Config _config;
         public OpenFileAction(XmlElement config)
-            :this(new Config(config))
+            : this(new Config(config))
         {
         }
 
@@ -21,15 +22,18 @@ namespace cn.antontech.ITHelper.AutoActions
 
         public override void Exec()
         {
-            if(!File.Exists(_config.Path))
+            string notice = string.Format("您是否需要打开 {0}", _config.Name);
+            if(MessageBox.Show(
+                notice,
+                "提示",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information) == DialogResult.OK)
             {
-                OnNotify(string.Format("{0} 不存在！",_config.Name));
-            }
-            else
-            {
-                OnNotify(string.Format("正在打开用户手册..."));
-                System.Diagnostics.Process.Start(_config.Path);
-                OnNotify(string.Format("成功打开 {0}", _config.Name));
+                OnNotify(string.Format("正在通过IE浏览器打开 {0} ...", _config.Name));
+                System.Diagnostics.ProcessStartInfo value =
+                    new System.Diagnostics.ProcessStartInfo("iexplore.exe", _config.Path);
+                System.Diagnostics.Process.Start(value);
+                OnNotify(string.Format("打开 {0} 成功", _config.Name));
             }
         }
 
@@ -39,7 +43,7 @@ namespace cn.antontech.ITHelper.AutoActions
             {
             }
             public Config(XmlElement config)
-                :this()
+                : this()
             {
                 string name = config.Attributes["Name"].Value;
                 string path = config.Attributes["Path"].Value;

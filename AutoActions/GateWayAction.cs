@@ -45,7 +45,7 @@ namespace cn.antontech.ITHelper.AutoActions
                     serviceKey.SetValue("Start", 2);
                     if (Environment.OSVersion.Version.Major >= 6)
                         serviceKey.SetValue("DelayedAutostart", 0, RegistryValueKind.DWord);
-                    OnNotify("自动启动设置成功！");
+                    OnNotify("开机自启设置成功！");
                 }
             }
         }
