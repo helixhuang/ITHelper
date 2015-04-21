@@ -21,6 +21,11 @@ namespace cn.antontech.ITHelper
             }
             else
             {
+                string baseDir = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ITHelper");
+                if(!System.IO.Directory.Exists(baseDir))
+                {
+                    System.IO.Directory.CreateDirectory(baseDir);
+                }
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MainForm());

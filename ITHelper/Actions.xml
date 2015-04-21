@@ -57,11 +57,11 @@
     <SecurityZone Domain="219.238.8.102" />
     <SecurityZone Domain="oa.antonoil.com" />
     <PopupBlocker Domain="oa.antonoil.com" />
-    <Install Name="E-cology控件" Path="OA\Ecologyplugin.exe"/>
-    <Install Name="文件上传控件" Path="OA\fileupload.exe"/>
-    <Install Name="Office 控件" Path="OA\iWebOffice.exe"/>
-    <Install Name="图形化流程控件" Path="OA\chinaexcel.exe"/>
-    <Install Name="报表控件" Path="OA\teechart.exe"/>
+    <Install Name="Ecologyplugin.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/"/>
+    <Install Name="fileupload.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="iWebOffice.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="chinaexcel.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="teechart.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
     <CopyFile OS="x86" From="OA\OA-32.lnk" To="%DesktopDirectory%\OA.lnk"/>
     <CopyFile OS="x64" From="OA\OA-64.lnk" To="%DesktopDirectory%\OA.lnk"/>
     <IEHome Url="http://www.antonoil.com" />
@@ -88,11 +88,11 @@
   <ActionGroup Name="解决IE11下的OA问题" NeedAdmin="True" Instruction="解决使用IE11访问OA时页面不完整问题">
     <SecurityZone Domain="oa.antonoil.com"/>
     <SecurityZone Domain="192.168.100.245"/>
-    <Install Name="E-cology控件" Path="OA\Ecologyplugin.exe" Url="http://www.antontech.cn/aaa.exe"/>
-    <Install Name="文件上传控件" Path="OA\fileupload.exe"/>
-    <Install Name="Office 控件" Path="OA\iWebOffice.exe"/>
-    <Install Name="图形化流程控件" Path="OA\chinaexcel.exe"/>
-    <Install Name="报表控件" Path="OA\teechart.exe"/>
+    <Install Name="Ecologyplugin.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/"/>
+    <Install Name="fileupload.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="iWebOffice.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="chinaexcel.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="teechart.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
     <CopyFile OS="x86" From="OA\OA-32.lnk" To="%DesktopDirectory%\OA.lnk"/>
     <CopyFile OS="x64" From="OA\OA-64.lnk" To="%DesktopDirectory%\OA.lnk"/>
     <ShowMessage Message="处理完毕\n并在桌面上创建了OA的快捷方式\n点击确定打开OA进行测试"/>
@@ -102,12 +102,12 @@
     <IEHome Url="http://www.antonoil.com" />
   </ActionGroup>
   <ActionGroup Name="安装国内VPN" NeedAdmin="True" Instruction="安装国内VPN客户端，并打开国内VPN用户手册">
-    <Install Name="国内VPN" Path="VPN\Domestic.exe" />
+    <Install Name="Domestic.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
     <OpenFile Name="国内VPN用户手册"
               Path="https://home.antonoil.com/informatization/_layouts/15/WopiFrame.aspx?sourcedoc=/informatization/TrainDoc/%E5%9B%BD%E5%86%85VPN%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.docx&amp;action=default" />
   </ActionGroup>
   <ActionGroup Name="安装海外VPN" NeedAdmin="True" Instruction="安装海外VPN客户端，并打开海外VPN用户手册">
-    <Install Name="海外VPN" Path="VPN\Overseas.exe" />
+    <Install Name="Overseas.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
     <OpenFile Name="海外VPN用户手册" 
               Path="https://home.antonoil.com/informatization/_layouts/15/WopiFrame.aspx?sourcedoc=/informatization/TrainDoc/%E6%B5%B7%E5%A4%96VPN%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.docx&amp;action=default" />
   </ActionGroup>
@@ -125,11 +125,11 @@
   </ActionGroup>
   <ActionGroup Name="IE浏览器OA设置" NeedAdmin="True" Instruction="安装OA系统必备插件并在桌面生成快捷方式">
     <PopupBlocker Domain="oa.antonoil.com" />
-    <Install Name="E-cology控件" Path="OA\Ecologyplugin.exe"/>
-    <Install Name="文件上传控件" Path="OA\fileupload.exe"/>
-    <Install Name="Office 控件" Path="OA\iWebOffice.exe"/>
-    <Install Name="图形化流程控件" Path="OA\chinaexcel.exe"/>
-    <Install Name="报表控件" Path="OA\teechart.exe"/>
+    <Install Name="Ecologyplugin.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/"/>
+    <Install Name="fileupload.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="iWebOffice.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="chinaexcel.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
+    <Install Name="teechart.exe" Url="http://www.antontech.cn/publish/ITHelper/soft/" />
     <CopyFile OS="x86" From="OA\OA-32.lnk" To="%DesktopDirectory%\OA.lnk"/>
     <CopyFile OS="x64" From="OA\OA-64.lnk" To="%DesktopDirectory%\OA.lnk"/>
   </ActionGroup>

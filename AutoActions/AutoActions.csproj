@@ -38,6 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Data" />
@@ -51,6 +52,12 @@
     <Compile Include="BaseAction.cs" />
     <Compile Include="CompatibilityViewAction.cs" />
     <Compile Include="CopyFileAction.cs" />
+    <Compile Include="Download.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Download.Designer.cs">
+      <DependentUpon>Download.cs</DependentUpon>
+    </Compile>
     <Compile Include="GateWayAction.cs" />
     <Compile Include="IAction.cs" />
     <Compile Include="IEHomeAction.cs" />
@@ -98,6 +105,11 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Download.resx">
+      <DependentUpon>Download.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Xml;
+using System.Windows.Forms;
 
 namespace cn.antontech.ITHelper.AutoActions
 {
@@ -21,17 +23,39 @@ namespace cn.antontech.ITHelper.AutoActions
 
         public override void Exec()
         {
-
-            if (!File.Exists(_config.Path))
+            string baseDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ITHelper\\");
+            string filePath = Path.Combine(baseDir, _config.Name);
+            if (File.Exists(filePath))
             {
-                OnNotify(string.Format("不能加载 {0}（{1}），请检查文件是否存在", _config.Name, _config.Path));
+                OnNotify(string.Format("本地找到安装文件 {0} ，开始安装...", _config.Name));
+                ProcessStartInfo start = new ProcessStartInfo()
+                {
+                    FileName = filePath,
+                    Arguments = "",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true
+                };
+                using (Process process = Process.Start(start))
+                {
+                    using (StreamReader reader = process.StandardOutput)
+                    {
+                        string result = reader.ReadToEnd();
+                        OnNotify(string.Format("MSG:{0}", result));
+                    }
+                }
+                OnNotify(string.Format("安装成功 {0}", _config.Name));
             }
             else
             {
-                OnNotify(string.Format("开始安装 {0}", _config.Name));
+                OnNotify(string.Format("本地未能找到安装文件，正在下载安装文件 {0}", _config.Name));
+                string downLoadPath = Path.Combine(_config.Url, _config.Name); 
+                Download downLoad = new Download(downLoadPath, filePath, _config.Name);
+                downLoad.ShowDialog();
+                OnNotify(string.Format("下载安装文件 {0} 成功，开始安装", _config.Name));
                 ProcessStartInfo start = new ProcessStartInfo()
                 {
-                    FileName = _config.Path,
+                    FileName = filePath,
                     Arguments = "",
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
@@ -59,12 +83,12 @@ namespace cn.antontech.ITHelper.AutoActions
             {
 
                 string name = config.Attributes["Name"].Value;
-                string path = config.Attributes["Path"].Value;
+                string url = config.Attributes["Url"].Value;
                 Name = name;
-                Path = path;
+                Url = url;
             }
             public string Name { get; set; }
-            public string Path { get; set; }
+            public string Url { get; set; }
         }
     }
 }
