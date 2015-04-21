@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace cn.antontech.ITHelper
 {
     public partial class RemindBox : Form
@@ -25,7 +26,16 @@ namespace cn.antontech.ITHelper
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if(boxVisibility.Checked)
+            {
+                Properties.Settings.Default.remindBoxVisibility = false;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                return;
+            }
+            this.Close();
         }
     }
 }

@@ -22,5 +22,17 @@ namespace cn.antontech.ITHelper.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool remindBoxVisibility {
+            get {
+                return ((bool)(this["remindBoxVisibility"]));
+            }
+            set {
+                this["remindBoxVisibility"] = value;
+            }
+        }
     }
 }

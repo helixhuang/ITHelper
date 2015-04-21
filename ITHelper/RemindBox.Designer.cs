@@ -31,13 +31,16 @@
             this.remind = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.lb3 = new System.Windows.Forms.Label();
+            this.lb5 = new System.Windows.Forms.Label();
+            this.lb4 = new System.Windows.Forms.Label();
             this.lb2 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
             this.lb0 = new System.Windows.Forms.Label();
-            this.lb4 = new System.Windows.Forms.Label();
-            this.lb5 = new System.Windows.Forms.Label();
+            this.lb3 = new System.Windows.Forms.Label();
+            this.boxVisibility = new System.Windows.Forms.CheckBox();
+            this.panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel.SuspendLayout();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // remind
@@ -70,7 +73,7 @@
             this.tableLayoutPanel.Controls.Add(this.lb1, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.lb0, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.lb3, 0, 3);
-            this.tableLayoutPanel.Location = new System.Drawing.Point(26, 53);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(14, 12);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 6;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -82,14 +85,23 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(401, 181);
             this.tableLayoutPanel.TabIndex = 5;
             // 
-            // lb3
+            // lb5
             // 
-            this.lb3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lb3.Location = new System.Drawing.Point(3, 90);
-            this.lb3.Name = "lb3";
-            this.lb3.Size = new System.Drawing.Size(395, 28);
-            this.lb3.TabIndex = 3;
-            this.lb3.Text = "remind";
+            this.lb5.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lb5.Location = new System.Drawing.Point(3, 150);
+            this.lb5.Name = "lb5";
+            this.lb5.Size = new System.Drawing.Size(395, 28);
+            this.lb5.TabIndex = 5;
+            this.lb5.Text = "remind";
+            // 
+            // lb4
+            // 
+            this.lb4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lb4.Location = new System.Drawing.Point(3, 120);
+            this.lb4.Name = "lb4";
+            this.lb4.Size = new System.Drawing.Size(395, 28);
+            this.lb4.TabIndex = 4;
+            this.lb4.Text = "remind";
             // 
             // lb2
             // 
@@ -118,23 +130,33 @@
             this.lb0.TabIndex = 0;
             this.lb0.Text = "remind";
             // 
-            // lb4
+            // lb3
             // 
-            this.lb4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lb4.Location = new System.Drawing.Point(3, 120);
-            this.lb4.Name = "lb4";
-            this.lb4.Size = new System.Drawing.Size(395, 28);
-            this.lb4.TabIndex = 4;
-            this.lb4.Text = "remind";
+            this.lb3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lb3.Location = new System.Drawing.Point(3, 90);
+            this.lb3.Name = "lb3";
+            this.lb3.Size = new System.Drawing.Size(395, 28);
+            this.lb3.TabIndex = 3;
+            this.lb3.Text = "remind";
             // 
-            // lb5
+            // boxVisibility
             // 
-            this.lb5.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lb5.Location = new System.Drawing.Point(3, 150);
-            this.lb5.Name = "lb5";
-            this.lb5.Size = new System.Drawing.Size(395, 28);
-            this.lb5.TabIndex = 5;
-            this.lb5.Text = "remind";
+            this.boxVisibility.AutoSize = true;
+            this.boxVisibility.Location = new System.Drawing.Point(26, 264);
+            this.boxVisibility.Name = "boxVisibility";
+            this.boxVisibility.Size = new System.Drawing.Size(72, 16);
+            this.boxVisibility.TabIndex = 6;
+            this.boxVisibility.Text = "不再显示";
+            this.boxVisibility.UseVisualStyleBackColor = true;
+            // 
+            // panel
+            // 
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel.Controls.Add(this.tableLayoutPanel);
+            this.panel.Location = new System.Drawing.Point(12, 38);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(429, 203);
+            this.panel.TabIndex = 7;
             // 
             // RemindBox
             // 
@@ -142,7 +164,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(455, 299);
-            this.Controls.Add(this.tableLayoutPanel);
+            this.Controls.Add(this.panel);
+            this.Controls.Add(this.boxVisibility);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.remind);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -151,7 +174,9 @@
             this.Text = "RemindBox";
             this.TopMost = true;
             this.tableLayoutPanel.ResumeLayout(false);
+            this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -166,5 +191,7 @@
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.Label lb4;
         private System.Windows.Forms.Label lb5;
+        private System.Windows.Forms.CheckBox boxVisibility;
+        private System.Windows.Forms.Panel panel;
     }
 }

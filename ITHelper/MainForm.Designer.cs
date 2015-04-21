@@ -54,11 +54,6 @@
             this.tabPageSoftware = new System.Windows.Forms.TabPage();
             this.webSoft = new System.Windows.Forms.WebBrowser();
             this.tabPageFix = new System.Windows.Forms.TabPage();
-            this.tabPageScan = new System.Windows.Forms.TabPage();
-            this.systemInfoTxt = new System.Windows.Forms.TextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.startScanButton = new System.Windows.Forms.ToolStripButton();
-            this.sysinfoButton = new System.Windows.Forms.ToolStripButton();
             this.splitContainerAction = new System.Windows.Forms.SplitContainer();
             this.actionListBox = new cn.antontech.ITHelper.ActionListBox();
             this.actionTab = new System.Windows.Forms.TabControl();
@@ -67,6 +62,11 @@
             this.eventListBox = new cn.antontech.ITHelper.EventListBox();
             this.toolStripAction = new System.Windows.Forms.ToolStrip();
             this.startActionButton = new System.Windows.Forms.ToolStripButton();
+            this.tabPageScan = new System.Windows.Forms.TabPage();
+            this.systemInfoTxt = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.startScanButton = new System.Windows.Forms.ToolStripButton();
+            this.sysinfoButton = new System.Windows.Forms.ToolStripButton();
             this.menuTop.SuspendLayout();
             this.statusBottom.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -75,14 +75,14 @@
             this.tabPageLinks.SuspendLayout();
             this.tabPageSoftware.SuspendLayout();
             this.tabPageFix.SuspendLayout();
-            this.tabPageScan.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.splitContainerAction.Panel1.SuspendLayout();
             this.splitContainerAction.Panel2.SuspendLayout();
             this.splitContainerAction.SuspendLayout();
             this.actionTab.SuspendLayout();
             this.actionTabPage.SuspendLayout();
             this.toolStripAction.SuspendLayout();
+            this.tabPageScan.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuTop
@@ -245,7 +245,7 @@
             this.webSchool.Location = new System.Drawing.Point(0, 0);
             this.webSchool.MinimumSize = new System.Drawing.Size(20, 20);
             this.webSchool.Name = "webSchool";
-            this.webSchool.Size = new System.Drawing.Size(715, 285);
+            this.webSchool.Size = new System.Drawing.Size(715, 283);
             this.webSchool.TabIndex = 1;
             // 
             // wbSchool
@@ -254,7 +254,7 @@
             this.wbSchool.Location = new System.Drawing.Point(0, 0);
             this.wbSchool.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbSchool.Name = "wbSchool";
-            this.wbSchool.Size = new System.Drawing.Size(715, 285);
+            this.wbSchool.Size = new System.Drawing.Size(715, 283);
             this.wbSchool.TabIndex = 0;
             // 
             // tabPageLinks
@@ -274,7 +274,7 @@
             this.webLinks.Location = new System.Drawing.Point(0, 0);
             this.webLinks.MinimumSize = new System.Drawing.Size(20, 20);
             this.webLinks.Name = "webLinks";
-            this.webLinks.Size = new System.Drawing.Size(715, 285);
+            this.webLinks.Size = new System.Drawing.Size(715, 283);
             this.webLinks.TabIndex = 0;
             // 
             // tabPageSoftware
@@ -294,7 +294,7 @@
             this.webSoft.Location = new System.Drawing.Point(0, 0);
             this.webSoft.MinimumSize = new System.Drawing.Size(20, 20);
             this.webSoft.Name = "webSoft";
-            this.webSoft.Size = new System.Drawing.Size(715, 285);
+            this.webSoft.Size = new System.Drawing.Size(715, 283);
             this.webSoft.TabIndex = 0;
             // 
             // tabPageFix
@@ -308,58 +308,6 @@
             this.tabPageFix.TabIndex = 0;
             this.tabPageFix.Text = "一键修复";
             this.tabPageFix.UseVisualStyleBackColor = true;
-            // 
-            // tabPageScan
-            // 
-            this.tabPageScan.Controls.Add(this.systemInfoTxt);
-            this.tabPageScan.Controls.Add(this.toolStrip1);
-            this.tabPageScan.ImageIndex = 3;
-            this.tabPageScan.Location = new System.Drawing.Point(4, 25);
-            this.tabPageScan.Name = "tabPageScan";
-            this.tabPageScan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageScan.Size = new System.Drawing.Size(715, 283);
-            this.tabPageScan.TabIndex = 1;
-            this.tabPageScan.Text = "系统检测";
-            this.tabPageScan.UseVisualStyleBackColor = true;
-            // 
-            // systemInfoTxt
-            // 
-            this.systemInfoTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.systemInfoTxt.Location = new System.Drawing.Point(3, 28);
-            this.systemInfoTxt.Multiline = true;
-            this.systemInfoTxt.Name = "systemInfoTxt";
-            this.systemInfoTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.systemInfoTxt.Size = new System.Drawing.Size(709, 252);
-            this.systemInfoTxt.TabIndex = 4;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startScanButton,
-            this.sysinfoButton});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(709, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // startScanButton
-            // 
-            this.startScanButton.Image = global::cn.antontech.ITHelper.Properties.Resources.resultset_next;
-            this.startScanButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.startScanButton.Name = "startScanButton";
-            this.startScanButton.Size = new System.Drawing.Size(52, 22);
-            this.startScanButton.Text = "检测";
-            this.startScanButton.Click += new System.EventHandler(this.startScanButton_Click);
-            // 
-            // sysinfoButton
-            // 
-            this.sysinfoButton.Image = global::cn.antontech.ITHelper.Properties.Resources.monitor;
-            this.sysinfoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sysinfoButton.Name = "sysinfoButton";
-            this.sysinfoButton.Size = new System.Drawing.Size(76, 22);
-            this.sysinfoButton.Text = "详细信息";
-            this.sysinfoButton.Click += new System.EventHandler(this.sysinfoButton_Click);
             // 
             // splitContainerAction
             // 
@@ -465,6 +413,58 @@
             this.startActionButton.Text = "执行";
             this.startActionButton.Click += new System.EventHandler(this.startActionButton_Click);
             // 
+            // tabPageScan
+            // 
+            this.tabPageScan.Controls.Add(this.systemInfoTxt);
+            this.tabPageScan.Controls.Add(this.toolStrip1);
+            this.tabPageScan.ImageIndex = 3;
+            this.tabPageScan.Location = new System.Drawing.Point(4, 25);
+            this.tabPageScan.Name = "tabPageScan";
+            this.tabPageScan.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageScan.Size = new System.Drawing.Size(715, 283);
+            this.tabPageScan.TabIndex = 1;
+            this.tabPageScan.Text = "系统检测";
+            this.tabPageScan.UseVisualStyleBackColor = true;
+            // 
+            // systemInfoTxt
+            // 
+            this.systemInfoTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.systemInfoTxt.Location = new System.Drawing.Point(3, 28);
+            this.systemInfoTxt.Multiline = true;
+            this.systemInfoTxt.Name = "systemInfoTxt";
+            this.systemInfoTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.systemInfoTxt.Size = new System.Drawing.Size(709, 252);
+            this.systemInfoTxt.TabIndex = 4;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startScanButton,
+            this.sysinfoButton});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(709, 25);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // startScanButton
+            // 
+            this.startScanButton.Image = global::cn.antontech.ITHelper.Properties.Resources.resultset_next;
+            this.startScanButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.startScanButton.Name = "startScanButton";
+            this.startScanButton.Size = new System.Drawing.Size(52, 22);
+            this.startScanButton.Text = "检测";
+            this.startScanButton.Click += new System.EventHandler(this.startScanButton_Click);
+            // 
+            // sysinfoButton
+            // 
+            this.sysinfoButton.Image = global::cn.antontech.ITHelper.Properties.Resources.monitor;
+            this.sysinfoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sysinfoButton.Name = "sysinfoButton";
+            this.sysinfoButton.Size = new System.Drawing.Size(76, 22);
+            this.sysinfoButton.Text = "详细信息";
+            this.sysinfoButton.Click += new System.EventHandler(this.sysinfoButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -490,10 +490,6 @@
             this.tabPageLinks.ResumeLayout(false);
             this.tabPageSoftware.ResumeLayout(false);
             this.tabPageFix.ResumeLayout(false);
-            this.tabPageScan.ResumeLayout(false);
-            this.tabPageScan.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.splitContainerAction.Panel1.ResumeLayout(false);
             this.splitContainerAction.Panel2.ResumeLayout(false);
             this.splitContainerAction.ResumeLayout(false);
@@ -502,6 +498,10 @@
             this.actionTabPage.PerformLayout();
             this.toolStripAction.ResumeLayout(false);
             this.toolStripAction.PerformLayout();
+            this.tabPageScan.ResumeLayout(false);
+            this.tabPageScan.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
