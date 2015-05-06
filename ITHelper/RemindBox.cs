@@ -33,9 +33,9 @@ namespace cn.antontech.ITHelper
             }
             else
             {
+                this.Close();
                 return;
             }
-            this.Close();
         }
     }
 }
